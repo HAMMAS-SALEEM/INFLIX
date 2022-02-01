@@ -351,7 +351,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 10px;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin: 0 30px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 20px;\r\n}\r\n\r\n.nav-items a {\r\n  padding: 5px 20px;\r\n  margin: 0 10px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 20px;\r\n  margin: 30px;\r\n}\r\n\r\n.nav-items a {\r\n  padding: 10px 20px 0 20px;\r\n  margin: 0 10px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n}\r\n\r\n@media screen and (max-width: 480px){\r\n  header {\r\n    width: 100%;\r\n    margin: 0;\r\n  }\r\n\r\n  .nav-items a {\r\n    padding: 5px 10px 0 10px;\r\n  }\r\n\r\n  .logo a {\r\n    padding: 5px 10px;\r\n    margin: 10px;\r\n  }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -488,7 +488,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(13), __webpack_require__.b);
 // Module
 var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
-var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Foodeez</title>\r\n</head>\r\n<body>\r\n    <header>\r\n        <div class = \"nav\">\r\n            <div class=\"logo\">\r\n                <a href=\"index.html\"><img src=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\" alt=\"Logo\"></a>\r\n            </div>\r\n            <div class=\"nav-items\">\r\n                <a href=\"index.html\">Home</a>\r\n                <a href=\"#foods\">Foods</a>\r\n                <a href=\"#reservation\">Reservation</a>\r\n            </div>\r\n        </div>\r\n    </header>\r\n\r\n    <footer>\r\n\r\n    </footer>\r\n</body>\r\n</html>";
+var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Foodeez</title>\r\n</head>\r\n<body>\r\n    <header>\r\n        <div class = \"nav\">\r\n            <div class=\"logo\">\r\n                <a href=\"index.html\"><img src=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\" alt=\"Logo\"></a>\r\n            </div>\r\n            <div class=\"nav-items\">\r\n                <a href=\"index.html\">Home</a>\r\n                <a href=\"#foods\">Foods</a>\r\n                <a href=\"#reservation\" class=\"reservation\">Reservation</a>\r\n            </div>\r\n        </div>\r\n    </header>\r\n\r\n    <footer>\r\n\r\n    </footer>\r\n</body>\r\n</html>";
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
 
@@ -527,7 +527,7 @@ module.exports = function (url, options) {
 /* 13 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "ececc5c4f5412ef39d50.png";
+module.exports = __webpack_require__.p + "84c7cee195ea9226e558.png";
 
 /***/ })
 /******/ 	]);
