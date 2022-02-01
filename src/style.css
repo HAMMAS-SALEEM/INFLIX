@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ListItems {
+  width: 95%;
+  margin: 40px auto;
+}
+
+li {
+  list-style: none;
+}
+
+.mov-post {
+  width: 280px;
+  height: 420px;
+}
+
+.mov-name {
+  width: 300px;
+}
+
+.comments {
+  width: 90%;
+  height: 40px;
+}
+
+.item {
+  margin-bottom: 30px;
+  padding: 10px;
+  background: whitesmoke;
+}
+
+@media screen and (max-width: 767px) {
+  .ListItems {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ListItems {
+    display: flex;
+    flex-flow: row wrap;
+    width: 95%;
+    margin: 40px auto;
+  }
+
+  .comments {
+    width: 100%;
+  }
+}
