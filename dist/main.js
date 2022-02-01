@@ -9,23 +9,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _storageManager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _showData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
 
-
-const showData = (itemContainer) => {
-
-    _storageManager__WEBPACK_IMPORTED_MODULE_0__["default"].forEach(item => {
-        itemContainer.innerHTML = `<li class="item">
-<img class="mov-post" src=${item.poster}>
-<p class="mov-name">${item.movie}</p>
-<button type="button" class="comments">Comments</button>
-</li>`
-    })
-
+const getApiData = (iContain) => {
+    fetch("https://imdb8.p.rapidapi.com/auto-complete?q=game%20of%20thr", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "imdb8.p.rapidapi.com",
+                "x-rapidapi-key": "6cfee6df44mshcf56fc30c596fb8p1e0277jsnd261193704fc"
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            let itemContain = iContain
+            const storage = data.d
+            console.log(storage)
+            ;(0,_showData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContain,storage);
+        })
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showData);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getApiData);
 
 /***/ }),
 /* 2 */
@@ -35,34 +39,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-const storage = [{
-    id: '1',
-    movie: 'Morbius',
-    poster: 'https://www.sonypictures.com/sites/default/files/styles/max_560x840/public/title-key-art/morbius_onesheet_april_1400x2100.jpg?itok=hw5ORyE-'
-},
-{
-    id: '1',
-    movie: 'Morbius',
-    poster: 'https://www.sonypictures.com/sites/default/files/styles/max_560x840/public/title-key-art/morbius_onesheet_april_1400x2100.jpg?itok=hw5ORyE-'
-},
-{
-    id: '1',
-    movie: 'Morbius',
-    poster: 'https://www.sonypictures.com/sites/default/files/styles/max_560x840/public/title-key-art/morbius_onesheet_april_1400x2100.jpg?itok=hw5ORyE-'
-},
-{
-    id: '1',
-    movie: 'Morbius',
-    poster: 'https://www.sonypictures.com/sites/default/files/styles/max_560x840/public/title-key-art/morbius_onesheet_april_1400x2100.jpg?itok=hw5ORyE-'
-},
-{
-    id: '1',
-    movie: 'Morbius',
-    poster: 'https://www.sonypictures.com/sites/default/files/styles/max_560x840/public/title-key-art/morbius_onesheet_april_1400x2100.jpg?itok=hw5ORyE-'
-}
-]
+const showData = (itemContainer,storage) => {
+  storage.forEach((item) => {
+    itemContainer.innerHTML += `<li class="item">
+<img class="mov-post" src=${item.i.imageUrl}>
+<p class="mov-name">${item.l}</p>
+<button type="button" class="comments">Comments</button>
+</li>`;
+  });
+};
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (storage);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showData);
 
 /***/ }),
 /* 3 */
@@ -413,7 +400,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n}\r\n\r\n.ListItems {\r\n    text-align: center;\r\n}\r\n\r\nli {\r\n    list-style: none;\r\n}\r\n\r\n.mov-post {\r\n    width: 280px;\r\n    height: 420px;\r\n}\r\n\r\n.comments {\r\n    width: 90%;\r\n    height: 40px;\r\n}\r\n\r\n.item {\r\n    margin-bottom: 30px;\r\n    padding: 10px;\r\n    background: whitesmoke;\r\n}\r\n\r\n@media screen and (max-width: 992px) {\r\n    body {\r\n        border: 1px solid gainsboro;\r\n        padding: 20px;\r\n    }\r\n}\r\n\r\n@media screen and (min-width: 993px) {\r\n    .ListItems {\r\n        display: flex;\r\n        flex-wrap: wrap;\r\n        justify-content: center;\r\n    }\r\n\r\n    .comments {\r\n        width: 100%;\r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.ListItems {\r\n  width: 95%;\r\n  margin: 40px auto;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  width: 280px;\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n    width: 300px;\r\n}\r\n\r\n.comments {\r\n  width: 90%;\r\n  height: 40px;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 10px;\r\n  background: whitesmoke;\r\n}\r\n\r\n@media screen and (max-width: 767px) {\r\n  .ListItems {\r\n    text-align: center;\r\n  }\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .ListItems {\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -608,17 +595,16 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_showData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _components_storageManager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _components_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 
 
 
+const itemContainer = document.querySelector('.ListItems');
 
-const itemContainer = document.querySelector('.ListItems')
-
-;(0,_components_showData__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContainer)
-
+window.addEventListener('load',()=>{
+    (0,_components_api_js__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContainer)
+})
 
 })();
 

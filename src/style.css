@@ -18,6 +18,10 @@ li {
   height: 420px;
 }
 
+.mov-name {
+  width: 300px;
+}
+
 .comments {
   width: 90%;
   height: 40px;

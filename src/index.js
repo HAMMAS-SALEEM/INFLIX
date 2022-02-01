@@ -1,6 +1,8 @@
-import showData from './components/showData.js';
+import getApiData from './components/api.js';
 import './style.css';
 
 const itemContainer = document.querySelector('.ListItems');
 
-showData(itemContainer);
+window.addEventListener('load', () => {
+  getApiData(itemContainer);
+});
