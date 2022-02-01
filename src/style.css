@@ -1,48 +1,46 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  border: 1px solid gainsboro;
+  padding: 20px;
 }
 
 .ListItems {
-    text-align: center;
+  text-align: center;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .mov-post {
-    width: 280px;
-    height: 420px;
+  width: 280px;
+  height: 420px;
 }
 
 .comments {
-    width: 90%;
-    height: 40px;
+  width: 90%;
+  height: 40px;
 }
 
 .item {
-    margin-bottom: 30px;
-    padding: 10px;
-    background: whitesmoke;
-}
-
-@media screen and (max-width: 992px) {
-    body {
-        border: 1px solid gainsboro;
-        padding: 20px;
-    }
+  margin-bottom: 30px;
+  padding: 10px;
+  background: whitesmoke;
 }
 
 @media screen and (min-width: 993px) {
-    .ListItems {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .ListItems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-    .comments {
-        width: 100%;
-    }
+  .comments {
+    width: 100%;
+  }
 }
