@@ -43,7 +43,7 @@ a {
   font-weight: bold;
 }
 
-@media screen and (max-width: 480px){
+/* @media screen and (max-width: 480px) { */
   header {
     width: 100%;
     margin: 0;
@@ -56,5 +56,54 @@ a {
   .logo a {
     padding: 5px 10px;
     margin: 10px;
+
   }
-}
+
+  .listItems {
+    width: 95%;
+    margin: 40px auto;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .mov-post {
+    width: 280px;
+    height: 420px;
+  }
+
+  .mov-name {
+    width: 300px;
+  }
+
+  .comments {
+    width: 90%;
+    height: 40px;
+  }
+
+  .item {
+    margin-bottom: 30px;
+    padding: 10px;
+    background: whitesmoke;
+  }
+/* } */
+
+  @media screen and (max-width: 767px) {
+    .listItems {
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .listItems {
+      display: flex;
+      flex-flow: row wrap;
+      width: 95%;
+      margin: 40px auto;
+    }
+
+    .comments {
+      width: 100%;
+    }
+  }
