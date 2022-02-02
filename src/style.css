@@ -57,28 +57,45 @@ a {
   margin: 40px auto;
 }
 
+.mov-detail {
+  display: flex;
+  margin: 20px 0;
+}
+
 li {
   list-style: none;
 }
 
 .mov-post {
-  width: 280px;
   height: 420px;
 }
 
 .mov-name {
   width: 300px;
+  font-weight: bolder;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+}
+
+.fa-heart {
+  margin-left: 5px;
+  font-size: 24px;
+  color: hotpink;
+  cursor: pointer;
 }
 
 .comments {
-  width: 90%;
   height: 40px;
 }
 
 .item {
   margin-bottom: 30px;
-  padding: 10px;
+  padding: 20px;
   background: whitesmoke;
+  width: 270px;
 }
 
 footer {
