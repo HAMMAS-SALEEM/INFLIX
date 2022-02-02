@@ -13,21 +13,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const getApiData = (iContain) => {
-    fetch("https://imdb8.p.rapidapi.com/auto-complete?q=game%20of%20thr", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "imdb8.p.rapidapi.com",
-                "x-rapidapi-key": "6cfee6df44mshcf56fc30c596fb8p1e0277jsnd261193704fc"
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            let itemContain = iContain
-            const storage = data.d
-            console.log(storage)
-            ;(0,_showData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContain,storage);
-        })
-}
+  fetch('https://imdb8.p.rapidapi.com/auto-complete?q=game%20of%20thr', {
+    method: 'GET',
+    headers: {
+      'x-rapidapi-host': 'imdb8.p.rapidapi.com',
+      'x-rapidapi-key': '6cfee6df44mshcf56fc30c596fb8p1e0277jsnd261193704fc',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const itemContain = iContain;
+      const storage = data.d;
+      (0,_showData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContain, storage);
+    });
+};
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getApiData);
 
@@ -39,7 +38,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-const showData = (itemContainer,storage) => {
+const showData = (itemContainer, storage) => {
   storage.forEach((item) => {
     itemContainer.innerHTML += `<li class="item">
 <img class="mov-post" src=${item.i.imageUrl}>
@@ -399,8 +398,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.ListItems {\r\n  width: 95%;\r\n  margin: 40px auto;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  width: 280px;\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n    width: 300px;\r\n}\r\n\r\n.comments {\r\n  width: 90%;\r\n  height: 40px;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 10px;\r\n  background: whitesmoke;\r\n}\r\n\r\n@media screen and (max-width: 767px) {\r\n  .ListItems {\r\n    text-align: center;\r\n  }\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .ListItems {\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 10px;\r\n  margin: 10px;\r\n}\r\n\r\n.nav-items a {\r\n  margin: 14px 10px 0 10px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n  padding: 5px 10px 0 10px;\r\n}\r\n\r\n.list-items {\r\n  width: 95%;\r\n  margin: 40px auto;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  width: 280px;\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n  width: 300px;\r\n}\r\n\r\n.comments {\r\n  width: 90%;\r\n  height: 40px;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 10px;\r\n  background: whitesmoke;\r\n}\r\n\r\n@media screen and (max-width: 767px) {\r\n\r\n* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 10px;\r\n  margin: 10px;\r\n}\r\n\r\n.nav-items a {\r\n  margin: 14px 10px 0 10px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n  padding: 5px 10px 0 10px;\r\n}\r\n\r\n.listItems {\r\n  width: 95%;\r\n  margin: 40px auto;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  width: 280px;\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n  width: 300px;\r\n}\r\n\r\n.comments {\r\n  width: 90%;\r\n  height: 40px;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 10px;\r\n  background: whitesmoke;\r\n}\r\n}\r\n@media screen and (max-width: 767px) {\r\n  .list-items {\r\n    text-align: center;\r\n  }\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .list-items {\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .listItems {\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -600,11 +600,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const itemContainer = document.querySelector('.ListItems');
+const itemContainer = document.querySelector('.list-items');
 
-window.addEventListener('load',()=>{
-    (0,_components_api_js__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContainer)
-})
+window.addEventListener('load', () => {
+  (0,_components_api_js__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContainer);
+});
 
 })();
 
