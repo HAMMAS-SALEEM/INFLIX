@@ -45,6 +45,14 @@ a {
   font-weight: bold;
 }
 
+#mov-count {
+  color: darkmagenta;
+  text-align: center;
+  margin: 10px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
 .list-items {
   margin: 40px auto;
 }
@@ -126,6 +134,7 @@ footer {
   .listItems {
     width: 95%;
     margin: 40px auto;
+    text-align: center;
   }
 
   li {
@@ -153,27 +162,8 @@ footer {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .list-items {
-    text-align: center;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .list-items {
-    display: flex;
-    flex-flow: row wrap;
-    width: 95%;
-    margin: 40px auto;
-  }
-
-  .comments {
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .listItems {
     display: flex;
     flex-flow: row wrap;
     width: 95%;
