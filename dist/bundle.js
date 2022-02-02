@@ -400,7 +400,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 20px;\r\n  margin: 30px;\r\n}\r\n\r\n.nav-items a {\r\n  padding: 10px 20px 0 20px;\r\n  margin: 14px 10px 0 10px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n}\r\n\r\n@media screen and (max-width: 480px) {\r\n  header {\r\n    width: 100%;\r\n    margin: 0;\r\n  }\r\n\r\n  .nav-items a {\r\n    padding: 5px 10px 0 10px;\r\n  }\r\n\r\n  .logo a {\r\n    padding: 5px 10px;\r\n    margin: 10px;\r\n\r\n  }\r\n\r\n  .ListItems {\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  li {\r\n    list-style: none;\r\n  }\r\n\r\n  .mov-post {\r\n    width: 280px;\r\n    height: 420px;\r\n  }\r\n\r\n  .mov-name {\r\n    width: 300px;\r\n  }\r\n\r\n  .comments {\r\n    width: 90%;\r\n    height: 40px;\r\n  }\r\n\r\n  .item {\r\n    margin-bottom: 30px;\r\n    padding: 10px;\r\n    background: whitesmoke;\r\n  }\r\n}\r\n\r\n  @media screen and (max-width: 767px) {\r\n    .ListItems {\r\n      text-align: center;\r\n    }\r\n  }\r\n\r\n  @media screen and (min-width: 768px) {\r\n    .ListItems {\r\n      display: flex;\r\n      flex-flow: row wrap;\r\n      width: 95%;\r\n      margin: 40px auto;\r\n    }\r\n\r\n    .comments {\r\n      width: 100%;\r\n    }\r\n  }", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 10px;\r\n  margin: 10px;\r\n}\r\n\r\n.nav-items a {\r\n  margin: 14px 10px 0 10px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n  padding: 5px 10px 0 10px;\r\n}\r\n\r\n.listItems {\r\n  width: 95%;\r\n  margin: 40px auto;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  width: 280px;\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n  width: 300px;\r\n}\r\n\r\n.comments {\r\n  width: 90%;\r\n  height: 40px;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 10px;\r\n  background: whitesmoke;\r\n}\r\n\r\n/* } */\r\n\r\n@media screen and (max-width: 767px) {\r\n  .listItems {\r\n    text-align: center;\r\n  }\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .listItems {\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -522,62 +522,6 @@ module.exports = function (cssWithMappingToString) {
   return list;
 };
 
-/***/ }),
-/* 13 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
-/* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(15), __webpack_require__.b);
-// Module
-var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
-var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Foodeez</title>\r\n</head>\r\n<body>\r\n    <header>\r\n        <div class = \"nav\">\r\n            <div class=\"logo\">\r\n                <a href=\"index.html\"><img src=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\" alt=\"Logo\"></a>\r\n            </div>\r\n            <div class=\"nav-items\">\r\n                <a href=\"index.html\">Home</a>\r\n                <a href=\"#About\">About Us</a>\r\n                <a href=\"#contact\" class=\"reservation\">Contact Us</a>\r\n            </div>\r\n        </div>\r\n    </header>\r\n    <section>\r\n        <h2>List</h2>\r\n        <ul class=\"ListItems\">\r\n            \r\n        </ul>\r\n    </section>\r\n    <footer>\r\n    </footer>\r\n</body>\r\n</html>";
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
-
-/***/ }),
-/* 14 */
-/***/ ((module) => {
-
-
-
-module.exports = function (url, options) {
-  if (!options) {
-    // eslint-disable-next-line no-param-reassign
-    options = {};
-  }
-
-  if (!url) {
-    return url;
-  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
-
-
-  url = String(url.__esModule ? url.default : url);
-
-  if (options.hash) {
-    // eslint-disable-next-line no-param-reassign
-    url += options.hash;
-  }
-
-  if (options.maybeNeedQuotes && /[\t\n\f\r "'=<>`]/.test(url)) {
-    return "\"".concat(url, "\"");
-  }
-
-  return url;
-};
-
-/***/ }),
-/* 15 */
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "8bca2c9dcf69c217ba4e.png";
-
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -605,9 +549,6 @@ module.exports = __webpack_require__.p + "8bca2c9dcf69c217ba4e.png";
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -633,18 +574,6 @@ module.exports = __webpack_require__.p + "8bca2c9dcf69c217ba4e.png";
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -661,52 +590,6 @@ module.exports = __webpack_require__.p + "8bca2c9dcf69c217ba4e.png";
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/publicPath */
-/******/ 	(() => {
-/******/ 		var scriptUrl;
-/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
-/******/ 		var document = __webpack_require__.g.document;
-/******/ 		if (!scriptUrl && document) {
-/******/ 			if (document.currentScript)
-/******/ 				scriptUrl = document.currentScript.src
-/******/ 			if (!scriptUrl) {
-/******/ 				var scripts = document.getElementsByTagName("script");
-/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
-/******/ 			}
-/******/ 		}
-/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
-/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
-/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl;
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			0: 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		// no on chunks loaded
-/******/ 		
-/******/ 		// no jsonp function
-/******/ 	})();
-/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -714,17 +597,14 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
 
 
 
-
-const itemContainer = document.querySelector('.ListItems');
+const itemContainer = document.querySelector('.listItems');
 
 window.addEventListener('load', () => {
   (0,_components_api_js__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContainer);
 });
-
 })();
 
 /******/ })()
