@@ -46,7 +46,6 @@ a {
 }
 
 .list-items {
-  width: 95%;
   margin: 40px auto;
 }
 
@@ -72,6 +71,21 @@ li {
   margin-bottom: 30px;
   padding: 10px;
   background: whitesmoke;
+}
+
+footer {
+  display: flex;
+  background-color: rosybrown;
+  height: 100px;
+  width: 90%;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer-text {
+  font-weight: 600;
+  width: 250px;
 }
 
 @media screen and (max-width: 767px) {
@@ -105,10 +119,8 @@ li {
   }
 
   .nav-items a {
-    margin: 14px 10px 0 10px;
     font-size: 18px;
     font-weight: bold;
-    padding: 5px 10px 0 10px;
   }
 
   .listItems {
