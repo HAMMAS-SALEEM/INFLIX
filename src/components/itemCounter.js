@@ -1,5 +1,5 @@
-const itemCounter = (totalItems,itemsCounter)=>{
-    itemsCounter.innerHTML = `Movies(${totalItems})`
-}
+const itemCounter = (totalItems, itemsCounter) => {
+  itemsCounter.innerHTML = `Movies(${totalItems})`;
+};
 
 export default itemCounter;
