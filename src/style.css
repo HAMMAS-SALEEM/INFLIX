@@ -12,6 +12,8 @@ body {
 header {
   background-color: rgb(248, 248, 248);
   padding: 5px;
+  width: 100%;
+  margin: 0;
 }
 
 a {
@@ -32,78 +34,63 @@ a {
 }
 
 .logo a {
-  padding: 5px 20px;
-  margin: 30px;
+  padding: 5px 10px;
+  margin: 10px;
 }
 
 .nav-items a {
-  padding: 10px 20px 0 20px;
   margin: 14px 10px 0 10px;
   font-size: 18px;
   font-weight: bold;
+  padding: 5px 10px 0 10px;
 }
 
-/* @media screen and (max-width: 480px) { */
-  header {
-    width: 100%;
-    margin: 0;
-  }
+.listItems {
+  width: 95%;
+  margin: 40px auto;
+}
 
-  .nav-items a {
-    padding: 5px 10px 0 10px;
-  }
+li {
+  list-style: none;
+}
 
-  .logo a {
-    padding: 5px 10px;
-    margin: 10px;
+.mov-post {
+  width: 280px;
+  height: 420px;
+}
 
-  }
+.mov-name {
+  width: 300px;
+}
 
+.comments {
+  width: 90%;
+  height: 40px;
+}
+
+.item {
+  margin-bottom: 30px;
+  padding: 10px;
+  background: whitesmoke;
+}
+
+/* } */
+
+@media screen and (max-width: 767px) {
   .listItems {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .listItems {
+    display: flex;
+    flex-flow: row wrap;
     width: 95%;
     margin: 40px auto;
   }
 
-  li {
-    list-style: none;
-  }
-
-  .mov-post {
-    width: 280px;
-    height: 420px;
-  }
-
-  .mov-name {
-    width: 300px;
-  }
-
   .comments {
-    width: 90%;
-    height: 40px;
+    width: 100%;
   }
-
-  .item {
-    margin-bottom: 30px;
-    padding: 10px;
-    background: whitesmoke;
-  }
-/* } */
-
-  @media screen and (max-width: 767px) {
-    .listItems {
-      text-align: center;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    .listItems {
-      display: flex;
-      flex-flow: row wrap;
-      width: 95%;
-      margin: 40px auto;
-    }
-
-    .comments {
-      width: 100%;
-    }
-  }
+}
