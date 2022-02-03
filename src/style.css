@@ -96,6 +96,8 @@ li {
   padding: 20px;
   background: whitesmoke;
   width: 270px;
+  display: flex;
+  flex-direction: column;
 }
 
 footer {
