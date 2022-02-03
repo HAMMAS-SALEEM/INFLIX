@@ -7,28 +7,56 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "addLike": () => (/* binding */ addLike),
+/* harmony export */   "getApiData": () => (/* binding */ getApiData)
 /* harmony export */ });
 /* harmony import */ var _showData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _itemCounter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 
 
-const getApiData = (iContain) => {
-  fetch('https://imdb8.p.rapidapi.com/auto-complete?q=game%20of%20thr', {
-    method: 'GET',
+
+const addLike = (id) => {
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/likes', {
+    method: 'POST',
     headers: {
-      'x-rapidapi-host': 'imdb8.p.rapidapi.com',
-      'x-rapidapi-key': '6cfee6df44mshcf56fc30c596fb8p1e0277jsnd261193704fc',
+      'Content-type': 'application/json; charset=UTF-8',
     },
+    body: JSON.stringify({
+      item_id: id,
+    }),
   })
-    .then((response) => response.json())
-    .then((data) => {
-      const itemContain = iContain;
-      const storage = data.d;
-      (0,_showData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContain, storage);
-    });
+    .then((response) => response.text())
+    .then((json) => json);
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getApiData);
+const getLikes = async () => {
+  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/likes');
+  return response.json();
+};
+
+const showUI = async (data, iContain, itemCount) => {
+  const likes = await getLikes();
+  const storage = [];
+  data.forEach((item) => {
+    storage.push({
+      ...(likes.find((innerItem) => innerItem.item_id.toString() === item.id.toString())),
+      ...item,
+
+    });
+  });
+  const itemContain = iContain;
+  const iCount = itemCount;
+  (0,_itemCounter_js__WEBPACK_IMPORTED_MODULE_1__["default"])(storage.length, iCount);
+  (0,_showData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContain, storage);
+};
+
+const getApiData = (iContain, itemCount) => {
+  fetch('http://api.tvmaze.com/shows')
+    .then((response) => response.json())
+    .then((data) => {
+      showUI(data, iContain, itemCount);
+    });
+};
 
 /***/ }),
 /* 2 */
@@ -39,12 +67,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const showData = (itemContainer, storage) => {
+  storage.sort((a, b) => a.id - b.id);
   storage.forEach((item) => {
-    itemContainer.innerHTML += `<li class="item">
-<img class="mov-post" src=${item.i.imageUrl}>
-<p class="mov-name">${item.l}</p>
+    if (item.likes == null) {
+      item.likes = 0;
+    }
+    if (item.id <= '10') {
+      itemContainer.innerHTML += `<li class="item">
+<img class="mov-post" src=${item.image.medium}>
+<div class="mov-detail">
+<p class="mov-name">${item.name}</p>
+<div class="likes">
+<h4 class="total-likes">${item.likes}</h4>
+<i id=${item.id} class="fas fa-heart"></i>
+</div>
+</div>
 <button type="button" class="comments">Comments</button>
 </li>`;
+    }
   });
 };
 
@@ -58,19 +98,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+const itemCounter = (totalItems, itemsCounter) => {
+  itemsCounter.innerHTML = `Movies(${totalItems - 230})`;
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (itemCounter);
+
+/***/ }),
+/* 4 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(10);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(11);
 
       
       
@@ -101,7 +155,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ ((module) => {
 
 
@@ -210,7 +264,7 @@ module.exports = function (list, options) {
 };
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ ((module) => {
 
 
@@ -285,7 +339,7 @@ function domAPI(options) {
 module.exports = domAPI;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ ((module) => {
 
 
@@ -329,7 +383,7 @@ function insertBySelector(insert, style) {
 module.exports = insertBySelector;
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
@@ -346,7 +400,7 @@ function setAttributesWithoutAttributes(styleElement) {
 module.exports = setAttributesWithoutAttributes;
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ ((module) => {
 
 
@@ -362,7 +416,7 @@ function insertStyleElement(options) {
 module.exports = insertStyleElement;
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ ((module) => {
 
 
@@ -383,16 +437,16 @@ function styleTagTransform(css, styleElement) {
 module.exports = styleTagTransform;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
@@ -400,13 +454,13 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 10px;\r\n  margin: 10px;\r\n}\r\n\r\n.nav-items a {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n}\r\n\r\n.list-items {\r\n  width: 95%;\r\n  margin: 40px auto;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  width: 280px;\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n  width: 300px;\r\n}\r\n\r\n.comments {\r\n  width: 90%;\r\n  height: 40px;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 10px;\r\n  background: whitesmoke;\r\n}\r\n\r\nfooter {\r\n  background-color: rosybrown;\r\n  height: 100px;\r\n  width: 90%;\r\n  margin: auto;\r\n}\r\n\r\n@media screen and (max-width: 767px) {\r\n  header {\r\n    background-color: rgb(248, 248, 248);\r\n    padding: 5px;\r\n    width: 100%;\r\n    margin: 0;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n    color: #000;\r\n  }\r\n\r\n  .nav {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 0 40px;\r\n  }\r\n\r\n  .nav-items {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    margin-right: 100px;\r\n  }\r\n\r\n  .logo a {\r\n    padding: 5px 10px;\r\n    margin: 10px;\r\n  }\r\n\r\n  .nav-items a {\r\n    margin: 14px 10px 0 10px;\r\n    font-size: 18px;\r\n    font-weight: bold;\r\n    padding: 5px 10px 0 10px;\r\n  }\r\n\r\n  .listItems {\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  li {\r\n    list-style: none;\r\n  }\r\n\r\n  .mov-post {\r\n    width: 280px;\r\n    height: 420px;\r\n  }\r\n\r\n  .mov-name {\r\n    width: 300px;\r\n  }\r\n\r\n  .comments {\r\n    width: 90%;\r\n    height: 40px;\r\n  }\r\n\r\n  .item {\r\n    margin-bottom: 30px;\r\n    padding: 10px;\r\n    background: whitesmoke;\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 767px) {\r\n  .list-items {\r\n    text-align: center;\r\n  }\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .list-items {\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .listItems {\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 10px;\r\n  margin: 10px;\r\n}\r\n\r\n.nav-items a {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n}\r\n\r\n#mov-count {\r\n  color: darkmagenta;\r\n  text-align: center;\r\n  margin: 10px;\r\n  font-size: 24px;\r\n  font-weight: 800;\r\n}\r\n\r\n.list-items {\r\n  margin: 40px auto;\r\n}\r\n\r\n.mov-detail {\r\n  display: flex;\r\n  margin: 20px 0;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n  width: 300px;\r\n  font-weight: bolder;\r\n}\r\n\r\n.likes {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.fa-heart {\r\n  margin-left: 5px;\r\n  font-size: 24px;\r\n  color: hotpink;\r\n  cursor: pointer;\r\n}\r\n\r\n.comments {\r\n  height: 40px;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 20px;\r\n  background: whitesmoke;\r\n  width: 270px;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\nfooter {\r\n  display: flex;\r\n  background-color: rosybrown;\r\n  height: 100px;\r\n  width: 90%;\r\n  margin: auto;\r\n  justify-content: space-evenly;\r\n  align-items: center;\r\n}\r\n\r\n.footer-text {\r\n  font-weight: 600;\r\n  width: 250px;\r\n}\r\n\r\n@media screen and (max-width: 767px) {\r\n  header {\r\n    background-color: rgb(248, 248, 248);\r\n    padding: 5px;\r\n    width: 100%;\r\n    margin: 0;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n    color: #000;\r\n  }\r\n\r\n  .nav {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 0 40px;\r\n  }\r\n\r\n  .nav-items {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    margin-right: 100px;\r\n  }\r\n\r\n  .logo a {\r\n    padding: 5px 10px;\r\n    margin: 10px;\r\n  }\r\n\r\n  .nav-items a {\r\n    font-size: 18px;\r\n    font-weight: bold;\r\n  }\r\n\r\n  .listItems {\r\n    width: 95%;\r\n    margin: 40px auto;\r\n    text-align: center;\r\n  }\r\n\r\n  li {\r\n    list-style: none;\r\n  }\r\n\r\n  .mov-post {\r\n    width: 280px;\r\n    height: 420px;\r\n  }\r\n\r\n  .mov-name {\r\n    width: 300px;\r\n  }\r\n\r\n  .comments {\r\n    width: 90%;\r\n    height: 40px;\r\n  }\r\n\r\n  .item {\r\n    margin-bottom: 30px;\r\n    padding: 10px;\r\n    background: whitesmoke;\r\n  }\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .list-items {\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ ((module) => {
 
 
@@ -416,7 +470,7 @@ module.exports = function (i) {
 };
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ ((module) => {
 
 
@@ -596,16 +650,60 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 
 
 
 const itemContainer = document.querySelector('.list-items');
+const itemCounter = document.getElementById('mov-count');
 
-window.addEventListener('load', () => {
-  (0,_components_api_js__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContainer);
+window.addEventListener('load', async () => {
+  await (0,_components_api_js__WEBPACK_IMPORTED_MODULE_0__.getApiData)(itemContainer, itemCounter);
 });
 
+itemContainer.addEventListener('click', (event) => {
+  if (event.target.tagName === 'I') {
+    (0,_components_api_js__WEBPACK_IMPORTED_MODULE_0__.addLike)(event.target.id);
+    const likesContainer = event.target.parentNode.querySelector('.total-likes');
+    const newVal = +likesContainer.innerHTML + 1;
+    likesContainer.innerHTML = newVal;
+  }
+});
+
+// const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/'
+// const id = 'IRmcCRWo9KSYZTxv7MqM'
+
+// const registerNewApp = async () => {
+//   const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', {
+//     method: 'POST',
+//     body: JSON.stringify({
+//       name: 'Foodeez',
+//     }),
+//     headers: {
+//       'Content-type': 'application/json; charset=UTF-8',
+//     },
+//   });
+//   const data = await response.text();
+//   return data;
+// };
+
+// const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/likes'
+
+// const createApp = async () => {
+//   await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', {
+//     method: 'POST',
+//     headers: {
+//       'Content-type': 'application/json; charset=UTF-8',
+//     },
+//     body: JSON.stringify({
+//       name: 'Foodeez'
+//     })
+//   })
+//     .then((response) => response.text())
+//     .then((json) =>json);
+// };
+
+// let a = 'RtogD48rFUxgVZ4q9xII';
 })();
 
 /******/ })()
