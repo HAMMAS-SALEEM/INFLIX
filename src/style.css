@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+* {
+  margin: 0;
+  top: 0;
+}
+
 body {
   font-family: 'Lato', sans-serif;
 }
@@ -79,4 +84,188 @@ ul {
   display: flex;
   justify-content: space-between;
   margin: 5px 350px;
+}
+header {
+  background-color: rgb(248, 248, 248);
+  padding: 5px;
+  width: 100%;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 40px;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 100px;
+}
+
+.logo a {
+  padding: 5px 10px;
+  margin: 10px;
+}
+
+.nav-items a {
+  margin: 0 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#mov-count {
+  color: darkmagenta;
+  text-align: center;
+  margin: 10px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.list-items {
+  margin: 40px auto;
+}
+
+.mov-detail {
+  display: flex;
+  margin: 20px 0;
+}
+
+li {
+  list-style: none;
+}
+
+.mov-post {
+  height: 420px;
+}
+
+.mov-name {
+  width: 300px;
+  font-weight: bolder;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+}
+
+.fa-heart {
+  margin-left: 5px;
+  font-size: 24px;
+  color: hotpink;
+  cursor: pointer;
+}
+
+.comments {
+  height: 40px;
+}
+
+.item {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: whitesmoke;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  display: flex;
+  background-color: rosybrown;
+  height: 100px;
+  width: 90%;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer-text {
+  font-weight: 600;
+  width: 250px;
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    background-color: rgb(248, 248, 248);
+    padding: 5px;
+    width: 100%;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 40px;
+  }
+
+  .nav-items {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 100px;
+  }
+
+  .logo a {
+    padding: 5px 10px;
+    margin: 10px;
+  }
+
+  .nav-items a {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .listItems {
+    width: 95%;
+    margin: 40px auto;
+    text-align: center;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .mov-post {
+    width: 280px;
+    height: 420px;
+  }
+
+  .mov-name {
+    width: 300px;
+  }
+
+  .comments {
+    width: 90%;
+    height: 40px;
+  }
+
+  .item {
+    margin-bottom: 30px;
+    padding: 10px;
+    background: whitesmoke;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .list-items {
+    display: flex;
+    flex-flow: row wrap;
+    width: 95%;
+    margin: 40px auto;
+  }
+
+  .comments {
+    width: 100%;
+  }
 }

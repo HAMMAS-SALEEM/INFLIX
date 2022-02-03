@@ -454,7 +454,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\n.popup {\r\n  width: auto;\r\n  margin: 20px 100px;\r\n}\r\n\r\n.comment h3 {\r\n  text-align: center;\r\n}\r\n\r\nform {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n  width: 50%;\r\n  margin: auto;\r\n}\r\n\r\n.submit-comment {\r\n  width: 80px;\r\n  height: 40px;\r\n  justify-self: end;\r\n  background-color: #fff;\r\n  box-shadow: 2px 2px #000;\r\n}\r\n\r\ninput {\r\n  height: 20px;\r\n  padding: 5px 10px;\r\n}\r\n\r\ntextarea {\r\n  padding: 5px 10px;\r\n}\r\n\r\n.demo {\r\n  display: flex;\r\n}\r\n\r\n.demo img{\r\n  width: 400px;\r\n  height: 200px;\r\n  margin: 20px 400px;\r\n}\r\n\r\n.close-btn {\r\n  width: 20px;\r\n  height: 20px;\r\n  border: none;\r\n  background-color: #fff;\r\n}\r\n\r\n.close-btn i {\r\n  font-size: x-large;\r\n}\r\n\r\n.comment-counter {\r\n  margin: 5px 350px;\r\n}\r\n\r\n.comment-counter h3 {\r\n  text-align: center;\r\n}\r\n\r\nul {\r\n  list-style-type: none;\r\n}\r\n\r\n.description h3 {\r\n   text-align: center;\r\n}\r\n\r\n.list {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin: 5px 350px;\r\n}\r\n\r\n  header {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 10px;\r\n  margin: 10px;\r\n}\r\n\r\n.nav-items a {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n}\r\n\r\n#mov-count {\r\n  color: darkmagenta;\r\n  text-align: center;\r\n  margin: 10px;\r\n  font-size: 24px;\r\n  font-weight: 800;\r\n}\r\n\r\n.list-items {\r\n  margin: 40px auto;\r\n}\r\n\r\n.mov-detail {\r\n  display: flex;\r\n  margin: 20px 0;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n  width: 300px;\r\n  font-weight: bolder;\r\n}\r\n\r\n.likes {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.fa-heart {\r\n  margin-left: 5px;\r\n  font-size: 24px;\r\n  color: hotpink;\r\n  cursor: pointer;\r\n}\r\n\r\n.comments {\r\n  height: 40px;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 20px;\r\n  background: whitesmoke;\r\n  width: 270px;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\nfooter {\r\n  display: flex;\r\n  background-color: rosybrown;\r\n  height: 100px;\r\n  width: 90%;\r\n  margin: auto;\r\n  justify-content: space-evenly;\r\n  align-items: center;\r\n}\r\n\r\n.footer-text {\r\n  font-weight: 600;\r\n  width: 250px;\r\n}\r\n\r\n@media screen and (max-width: 767px) {\r\n  header {\r\n    background-color: rgb(248, 248, 248);\r\n    padding: 5px;\r\n    width: 100%;\r\n    margin: 0;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n    color: #000;\r\n  }\r\n\r\n  .nav {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 0 40px;\r\n  }\r\n\r\n  .nav-items {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    margin-right: 100px;\r\n  }\r\n\r\n  .logo a {\r\n    padding: 5px 10px;\r\n    margin: 10px;\r\n  }\r\n\r\n  .nav-items a {\r\n    font-size: 18px;\r\n    font-weight: bold;\r\n  }\r\n\r\n  .listItems {\r\n    width: 95%;\r\n    margin: 40px auto;\r\n    text-align: center;\r\n  }\r\n\r\n  li {\r\n    list-style: none;\r\n  }\r\n\r\n  .mov-post {\r\n    width: 280px;\r\n    height: 420px;\r\n  }\r\n\r\n  .mov-name {\r\n    width: 300px;\r\n  }\r\n\r\n  .comments {\r\n    width: 90%;\r\n    height: 40px;\r\n  }\r\n\r\n  .item {\r\n    margin-bottom: 30px;\r\n    padding: 10px;\r\n    background: whitesmoke;\r\n  }\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .list-items {\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 10px;\r\n  margin: 10px;\r\n}\r\n\r\n.nav-items a {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n}\r\n\r\n#mov-count {\r\n  color: darkmagenta;\r\n  text-align: center;\r\n  margin: 10px;\r\n  font-size: 24px;\r\n  font-weight: 800;\r\n}\r\n\r\n.list-items {\r\n  margin: 40px auto;\r\n}\r\n\r\n.mov-detail {\r\n  display: flex;\r\n  margin: 20px 0;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n  width: 300px;\r\n  font-weight: bolder;\r\n}\r\n\r\n.likes {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.fa-heart {\r\n  margin-left: 5px;\r\n  font-size: 24px;\r\n  color: hotpink;\r\n  cursor: pointer;\r\n}\r\n\r\n.comments {\r\n  height: 40px;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 20px;\r\n  background: whitesmoke;\r\n  width: 270px;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\nfooter {\r\n  display: flex;\r\n  background-color: rosybrown;\r\n  height: 100px;\r\n  width: 90%;\r\n  margin: auto;\r\n  justify-content: space-evenly;\r\n  align-items: center;\r\n}\r\n\r\n.footer-text {\r\n  font-weight: 600;\r\n  width: 250px;\r\n}\r\n\r\n@media screen and (max-width: 767px) {\r\n  header {\r\n    background-color: rgb(248, 248, 248);\r\n    padding: 5px;\r\n    width: 100%;\r\n    margin: 0;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n    color: #000;\r\n  }\r\n\r\n  .nav {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 0 40px;\r\n  }\r\n\r\n  .nav-items {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    margin-right: 100px;\r\n  }\r\n\r\n  .logo a {\r\n    padding: 5px 10px;\r\n    margin: 10px;\r\n  }\r\n\r\n  .nav-items a {\r\n    font-size: 18px;\r\n    font-weight: bold;\r\n  }\r\n\r\n  .listItems {\r\n    width: 95%;\r\n    margin: 40px auto;\r\n    text-align: center;\r\n  }\r\n\r\n  li {\r\n    list-style: none;\r\n  }\r\n\r\n  .mov-post {\r\n    width: 280px;\r\n    height: 420px;\r\n  }\r\n\r\n  .mov-name {\r\n    width: 300px;\r\n  }\r\n\r\n  .comments {\r\n    width: 90%;\r\n    height: 40px;\r\n  }\r\n\r\n  .item {\r\n    margin-bottom: 30px;\r\n    padding: 10px;\r\n    background: whitesmoke;\r\n  }\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .list-items {\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -576,56 +576,6 @@ module.exports = function (cssWithMappingToString) {
   return list;
 };
 
-/***/ }),
-/* 14 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
-/* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ Object(function webpackMissingModule() { var e = new Error("Cannot find module '/\"\"'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), __webpack_require__.b);
-// Module
-var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
-var code = "// Imports\nimport ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___ from \"../node_modules/html-loader/dist/runtime/getUrl.js\";\nvar ___HTML_LOADER_IMPORT_0___ = new URL(\"./assets/images/logo2.png\", import.meta.url);\nvar ___HTML_LOADER_IMPORT_1___ = new URL(\"./images/demo.png\", import.meta.url);\n// Module\nvar " + ___HTML_LOADER_REPLACEMENT_0___ + " = ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___(___HTML_LOADER_IMPORT_0___);\nvar ___HTML_LOADER_REPLACEMENT_1___ = ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___(___HTML_LOADER_IMPORT_1___);\nvar code = \"<!DOCTYPE html>\\r\\n<html lang=\\\"en\\\">\\r\\n\\r\\n<head>\\r\\n    <meta charset=\\\"UTF-8\\\">\\r\\n    <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\r\\n    <link rel=\\\"stylesheet\\\" href=\\\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\\\">\\r\\n    <script\\r\\n      src=\\\"https://kit.fontawesome.com/fe6dec7cca.js\\\"\\r\\n      crossorigin=\\\"anonymous\\\"\\r\\n    ></script>\\r\\n    <title>Foodeez</title>\\r\\n</head>\\r\\n\\r\\n<body>\\r\\n    <header>\\r\\n        <div class=\\\"nav\\\">\\r\\n            <div class=\\\"logo\\\">\\r\\n                <a href=\\\"index.html\\\"><img src=" + ___HTML_LOADER_REPLACEMENT_0___ + " + " + ___HTML_LOADER_REPLACEMENT_0___ + " + \"\\\" alt=\\\"Logo\\\"></a>\\r\\n            </div>\\r\\n            <div class=\\\"nav-items\\\">\\r\\n                <a href=\\\"index.html\\\">Home</a>\\r\\n                <a href=\\\"#About\\\">About Us</a>\\r\\n                <a href=\\\"#contact\\\" class=\\\"reservation\\\">Contact Us</a>\\r\\n            </div>\\r\\n        </div>\\r\\n    </header>\\r\\n    <section>\\r\\n        <p id=\\\"mov-count\\\"></p>\\r\\n        <ul class=\\\"list-items\\\">\\r\\n\\r\\n        </ul>\\r\\n    </section>\\r\\n    <section class=\\\"popup\\\">\\r\\n        <div class=\\\"display\\\">\\r\\n            <div class=\\\"demo\\\">\\r\\n                <img src=" + ___HTML_LOADER_REPLACEMENT_0___ + " + ___HTML_LOADER_REPLACEMENT_1___ + \"\\\" alt=\\\"Demo image\\\">\\r\\n                <button class=\\\"close-btn\\\"><i class=\\\"fa fa-times\\\" aria-hidden=\\\"true\\\"></i></button>\\r\\n            </div>\\r\\n            <div class=\\\"description\\\">\\r\\n                <h3>Title</h3>\\r\\n                <div class=\\\"list\\\">\\r\\n                    <ul class=\\\"first-list\\\">\\r\\n                        <li>Type: Food</li>\\r\\n                        <li>Type: Food</li>\\r\\n                        <li>Type: Food</li>\\r\\n                    </ul>\\r\\n                    <ul class=\\\"second-list\\\">\\r\\n                        <li>Type: Food</li>\\r\\n                        <li>Type: Food</li>\\r\\n                        <li>Type: Food</li>\\r\\n                    </ul>\\r\\n                </div>\\r\\n            </div>\\r\\n            <div class=\\\"comment-counter\\\">\\r\\n                 <h3>Comments(2)</h3>\\r\\n                 <ul class=\\\"comments\\\">\\r\\n                     <li>2/1/2022 Alex: I would love it.</li>\\r\\n                     <li>3/1/2022 Tarik: I loved it.</li>\\r\\n                 </ul>\\r\\n            </div>\\r\\n        </div>\\r\\n     <section class=\\\"comment\\\">\\r\\n        <div class=\\\"add-comment\\\">\\r\\n            <h3>Add Comment</h3>\\r\\n        </div>\\r\\n        <form action=\\\"\\\" class=\\\"form\\\">\\r\\n            <input type=\\\"text\\\" name=\\\"name\\\" id=\\\"name\\\" placeholder=\\\"Your name\\\">\\r\\n            <textarea name=\\\"description\\\" id=\\\"description\\\" cols=\\\"30\\\" rows=\\\"10\\\" placeholder=\\\"Your insight\\\"></textarea>\\r\\n            <button class=\\\"submit-comment\\\">Comment</button>\\r\\n        </form>\\r\\n     </section>\\r\\n </section>\\r\\n    <footer>\\r\\n        <a href=\\\"index.html\\\"><img src=" + ___HTML_LOADER_REPLACEMENT_0___ + " + " + ___HTML_LOADER_REPLACEMENT_0___ + " + \"\\\" alt=\\\"Logo\\\"></a>\\r\\n        <p class=\\\"footer-text\\\">Created by Hammas & Tarikwa collaboratively.</p>\\r\\n    </footer>\\r\\n</body>\\r\\n\\r\\n</html>\";\n// Exports\nexport default code;";
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
-
-/***/ }),
-/* 15 */
-/***/ ((module) => {
-
-
-
-module.exports = function (url, options) {
-  if (!options) {
-    // eslint-disable-next-line no-param-reassign
-    options = {};
-  }
-
-  if (!url) {
-    return url;
-  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
-
-
-  url = String(url.__esModule ? url.default : url);
-
-  if (options.hash) {
-    // eslint-disable-next-line no-param-reassign
-    url += options.hash;
-  }
-
-  if (options.maybeNeedQuotes && /[\t\n\f\r "'=<>`]/.test(url)) {
-    return "\"".concat(url, "\"");
-  }
-
-  return url;
-};
-
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -652,9 +602,6 @@ module.exports = function (url, options) {
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
@@ -697,32 +644,6 @@ module.exports = function (url, options) {
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			0: 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		// no on chunks loaded
-/******/ 		
-/******/ 		// no jsonp function
-/******/ 	})();
-/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -730,8 +651,6 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
-/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
-
 
 
 
@@ -785,7 +704,6 @@ itemContainer.addEventListener('click', (event) => {
 // };
 
 // let a = 'RtogD48rFUxgVZ4q9xII';
-
 })();
 
 /******/ })()
