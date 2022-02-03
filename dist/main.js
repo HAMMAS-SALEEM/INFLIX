@@ -7,59 +7,56 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getApiData": () => (/* binding */ getApiData),
-/* harmony export */   "addLike": () => (/* binding */ addLike)
+/* harmony export */   "addLike": () => (/* binding */ addLike),
+/* harmony export */   "getApiData": () => (/* binding */ getApiData)
 /* harmony export */ });
 /* harmony import */ var _showData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _itemCounter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 
 
 
+const addLike = (id) => {
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/likes', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+    body: JSON.stringify({
+      item_id: id,
+    }),
+  })
+    .then((response) => response.text())
+    .then((json) => json);
+};
+
+const getLikes = async () => {
+  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/likes');
+  return response.json();
+};
+
+const showUI = async (data, iContain, itemCount) => {
+  const likes = await getLikes();
+  const storage = [];
+  data.forEach((item) => {
+    storage.push({
+      ...(likes.find((innerItem) => innerItem.item_id.toString() === item.id.toString())),
+      ...item,
+
+    });
+  });
+  const itemContain = iContain;
+  const iCount = itemCount;
+  (0,_itemCounter_js__WEBPACK_IMPORTED_MODULE_1__["default"])(storage.length, iCount);
+  (0,_showData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContain, storage);
+};
+
 const getApiData = (iContain, itemCount) => {
   fetch('http://api.tvmaze.com/shows')
     .then((response) => response.json())
-    .then((data) =>{
-      console.log(data)
-      showUI(data,iContain,itemCount);
+    .then((data) => {
+      showUI(data, iContain, itemCount);
     });
 };
-
-const addLike = (id)=>{
-  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/likes',{
-   method:'POST',
-   headers: {
-     'Content-type': 'application/json; charset=UTF-8'
-   },
-   body: JSON.stringify({
-    "item_id": id
-   })
-  })
-  .then(response=>response.text())
-  .then(json=>json)
-}
-
-const getLikes = async ()=>{
-  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/likes');
-  return response.json();
-}
-
-const showUI = async (data, iContain, itemCount)=>{
-      console.log('working')
-      let likes = await getLikes()
-      console.log(likes)
-      let storage=[];
-      data.forEach(item=>{
-           storage.push({
-            ...(likes.find((innerItem)=>innerItem.item_id.toString()===item.id.toString())),
-            ...item
-            
-          })
-        })
-      const itemContain = iContain;
-      const iCount = itemCount;
-      (0,_itemCounter_js__WEBPACK_IMPORTED_MODULE_1__["default"])(storage.length, iCount);
-      (0,_showData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(itemContain, storage);
-}
 
 /***/ }),
 /* 2 */
@@ -70,13 +67,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const showData = (itemContainer, storage) => {
-  storage.sort((a,b)=>a.id-b.id)
+  storage.sort((a, b) => a.id - b.id);
   storage.forEach((item) => {
-    if(item.likes==null){
-      item.likes=0
+    if (item.likes == null) {
+      item.likes = 0;
     }
-    if(item.id<="10"){
-        itemContainer.innerHTML += `<li class="item">
+    if (item.id <= '10') {
+      itemContainer.innerHTML += `<li class="item">
 <img class="mov-post" src=${item.image.medium}>
 <div class="mov-detail">
 <p class="mov-name">${item.name}</p>
@@ -89,7 +86,6 @@ const showData = (itemContainer, storage) => {
 </li>`;
     }
   });
-  console.log('done')
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showData);
@@ -103,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const itemCounter = (totalItems, itemsCounter) => {
-  itemsCounter.innerHTML = `Movies(${totalItems})`;
+  itemsCounter.innerHTML = `Movies(${totalItems - 230})`;
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (itemCounter);
@@ -458,7 +454,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 10px;\r\n  margin: 10px;\r\n}\r\n\r\n.nav-items a {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n}\r\n\r\n#mov-count {\r\n  color: darkmagenta;\r\n  text-align: center;\r\n  margin: 10px;\r\n  font-size: 24px;\r\n  font-weight: 800;\r\n}\r\n\r\n.list-items {\r\n  margin: 40px auto;\r\n}\r\n\r\n.mov-detail {\r\n  display: flex;\r\n  margin: 20px 0;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n  width: 300px;\r\n  font-weight: bolder;\r\n}\r\n\r\n.likes {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.fa-heart {\r\n  margin-left: 5px;\r\n  font-size: 24px;\r\n  color: hotpink;\r\n  cursor: pointer;\r\n}\r\n\r\n.comments {\r\n  height: 40px;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 20px;\r\n  background: whitesmoke;\r\n  width: 270px;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\nfooter {\r\n  display: flex;\r\n  background-color: rosybrown;\r\n  height: 100px;\r\n  width: 90%;\r\n  margin: auto;\r\n  justify-content: space-evenly;\r\n  align-items: center;\r\n}\r\n\r\n.footer-text {\r\n  font-weight: 600;\r\n  width: 250px;\r\n}\r\n\r\n@media screen and (max-width: 767px) {\r\n  header {\r\n    background-color: rgb(248, 248, 248);\r\n    padding: 5px;\r\n    width: 100%;\r\n    margin: 0;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n    color: #000;\r\n  }\r\n\r\n  .nav {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 0 40px;\r\n  }\r\n\r\n  .nav-items {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    margin-right: 100px;\r\n  }\r\n\r\n  .logo a {\r\n    padding: 5px 10px;\r\n    margin: 10px;\r\n  }\r\n\r\n  .nav-items a {\r\n    font-size: 18px;\r\n    font-weight: bold;\r\n  }\r\n\r\n  .listItems {\r\n    width: 95%;\r\n    margin: 40px auto;\r\n    text-align: center;\r\n  }\r\n\r\n  li {\r\n    list-style: none;\r\n  }\r\n\r\n  .mov-post {\r\n    width: 280px;\r\n    height: 420px;\r\n  }\r\n\r\n  .mov-name {\r\n    width: 300px;\r\n  }\r\n\r\n  .comments {\r\n    width: 90%;\r\n    height: 40px;\r\n  }\r\n\r\n  .item {\r\n    margin-bottom: 30px;\r\n    padding: 10px;\r\n    background: whitesmoke;\r\n  }\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .list-items {\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 10px;\r\n  margin: 10px;\r\n}\r\n\r\n.nav-items a {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n}\r\n\r\n#mov-count {\r\n  color: darkmagenta;\r\n  text-align: center;\r\n  margin: 10px;\r\n  font-size: 24px;\r\n  font-weight: 800;\r\n}\r\n\r\n.list-items {\r\n  margin: 40px auto;\r\n}\r\n\r\n.mov-detail {\r\n  display: flex;\r\n  margin: 20px 0;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n  width: 300px;\r\n  font-weight: bolder;\r\n}\r\n\r\n.likes {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.fa-heart {\r\n  margin-left: 5px;\r\n  font-size: 24px;\r\n  color: hotpink;\r\n  cursor: pointer;\r\n}\r\n\r\n.comments {\r\n  height: 40px;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 20px;\r\n  background: whitesmoke;\r\n  width: 270px;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\nfooter {\r\n  display: flex;\r\n  background-color: rosybrown;\r\n  height: 100px;\r\n  width: 90%;\r\n  margin: auto;\r\n  justify-content: space-evenly;\r\n  align-items: center;\r\n}\r\n\r\n.footer-text {\r\n  font-weight: 600;\r\n  width: 250px;\r\n}\r\n\r\n@media screen and (max-width: 767px) {\r\n  header {\r\n    background-color: rgb(248, 248, 248);\r\n    padding: 5px;\r\n    width: 100%;\r\n    margin: 0;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n    color: #000;\r\n  }\r\n\r\n  .nav {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 0 40px;\r\n  }\r\n\r\n  .nav-items {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    margin-right: 100px;\r\n  }\r\n\r\n  .logo a {\r\n    padding: 5px 10px;\r\n    margin: 10px;\r\n  }\r\n\r\n  .nav-items a {\r\n    font-size: 18px;\r\n    font-weight: bold;\r\n  }\r\n\r\n  .listItems {\r\n    width: 95%;\r\n    margin: 40px auto;\r\n    text-align: center;\r\n  }\r\n\r\n  li {\r\n    list-style: none;\r\n  }\r\n\r\n  .mov-post {\r\n    width: 280px;\r\n    height: 420px;\r\n  }\r\n\r\n  .mov-name {\r\n    width: 300px;\r\n  }\r\n\r\n  .comments {\r\n    width: 90%;\r\n    height: 40px;\r\n  }\r\n\r\n  .item {\r\n    margin-bottom: 30px;\r\n    padding: 10px;\r\n    background: whitesmoke;\r\n  }\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .list-items {\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -660,38 +656,19 @@ __webpack_require__.r(__webpack_exports__);
 
 const itemContainer = document.querySelector('.list-items');
 const itemCounter = document.getElementById('mov-count');
-const likeBtn = document.querySelector('.fa-heart')
-const totalLikes = document.querySelector('.totalLikes')
-
-
 
 window.addEventListener('load', async () => {
- await (0,_components_api_js__WEBPACK_IMPORTED_MODULE_0__.getApiData)(itemContainer, itemCounter);
+  await (0,_components_api_js__WEBPACK_IMPORTED_MODULE_0__.getApiData)(itemContainer, itemCounter);
 });
 
-itemContainer.addEventListener('click',(event)=>{
-  if(event.target.tagName==='I'){
-  (0,_components_api_js__WEBPACK_IMPORTED_MODULE_0__.addLike)(event.target.id)
+itemContainer.addEventListener('click', (event) => {
+  if (event.target.tagName === 'I') {
+    (0,_components_api_js__WEBPACK_IMPORTED_MODULE_0__.addLike)(event.target.id);
+    const likesContainer = event.target.parentNode.querySelector('.total-likes');
+    const newVal = +likesContainer.innerHTML + 1;
+    likesContainer.innerHTML = newVal;
   }
-})
-
-document.querySelector('.test').addEventListener('click',()=>{
-  console.log('got the point')
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 
 // const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/'
 // const id = 'IRmcCRWo9KSYZTxv7MqM'
@@ -710,9 +687,6 @@ document.querySelector('.test').addEventListener('click',()=>{
 //   return data;
 // };
 
-
-
-
 // const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/likes'
 
 // const createApp = async () => {
@@ -729,9 +703,7 @@ document.querySelector('.test').addEventListener('click',()=>{
 //     .then((json) =>json);
 // };
 
-
 // let a = 'RtogD48rFUxgVZ4q9xII';
-
 })();
 
 /******/ })()
