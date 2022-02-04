@@ -1,206 +1,80 @@
-<head><script defer src="main.js"></script></head>Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module build failed (from ./node_modules/html-loader/dist/cjs.js):
-  Error: Cannot find module 'clean-css'
-  Require stack:
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-minifier-terser\src\htmlminifier.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-loader\dist\plugins\minimizer-plugin.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-loader\dist\plugins\index.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-loader\dist\index.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-loader\dist\cjs.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\loadLoader.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\LoaderRunner.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\NormalModuleFactory.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\Compiler.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\webpack.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\index.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack-cli\lib\webpack-cli.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack-cli\lib\bootstrap.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack-cli\bin\cli.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\bin\webpack.js
-      at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
-      at Function.Module._load (node:internal/modules/cjs/loader:778:27)
-      at Module.require (node:internal/modules/cjs/loader:1005:19)
-      at require (node:internal/modules/cjs/helpers:102:18)
-      at Object.<anonymous> (D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-minifier-terser\src\htmlminifier.js:3:16)
-      at Module._compile (node:internal/modules/cjs/loader:1101:14)
-      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-      at Module.load (node:internal/modules/cjs/loader:981:32)
-      at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-      at Module.require (node:internal/modules/cjs/loader:1005:19)
-  ModuleBuildError: Module build failed (from ./node_modules/html-loader/dist/cjs.js):
-  Error: Cannot find module 'clean-css'
-  Require stack:
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-minifier-terser\src\htmlminifier.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-loader\dist\plugins\minimizer-plugin.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-loader\dist\plugins\index.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-loader\dist\index.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-loader\dist\cjs.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\loadLoader.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\LoaderRunner.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\NormalModuleFactory.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\Compiler.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\webpack.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\index.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack-cli\lib\webpack-cli.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack-cli\lib\bootstrap.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack-cli\bin\cli.js
-  - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\bin\webpack.js
-      at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
-      at Function.Module._load (node:internal/modules/cjs/loader:778:27)
-      at Module.require (node:internal/modules/cjs/loader:1005:19)
-      at require (node:internal/modules/cjs/helpers:102:18)
-      at Object.<anonymous> (D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-minifier-terser\src\htmlminifier.js:3:16)
-      at Module._compile (node:internal/modules/cjs/loader:1101:14)
-      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-      at Module.load (node:internal/modules/cjs/loader:981:32)
-      at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-      at Module.require (node:internal/modules/cjs/loader:1005:19)
-      at processResult (D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\NormalModule.js:753:19)
-      at D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\NormalModule.js:855:5
-      at D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\LoaderRunner.js:399:11
-      at D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\LoaderRunner.js:185:11
-      at loadLoader (D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\loadLoader.js:33:11)
-      at iteratePitchingLoaders (D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\LoaderRunner.js:182:2)
-      at iteratePitchingLoaders (D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\LoaderRunner.js:178:10)
-      at D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\LoaderRunner.js:189:18
-      at handleResult (D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\loadLoader.js:53:2)
-      at loadLoader (D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\loadLoader.js:35:10)
-  
-  - loader:933 Function.Module._resolveFilename
-    node:internal/modules/cjs/loader:933:15
-  
-  - loader:778 Function.Module._load
-    node:internal/modules/cjs/loader:778:27
-  
-  - loader:1005 Module.require
-    node:internal/modules/cjs/loader:1005:19
-  
-  - helpers:102 require
-    node:internal/modules/cjs/helpers:102:18
-  
-  - htmlminifier.js:3 Object.<anonymous>
-    [Foodeez]/[html-minifier-terser]/src/htmlminifier.js:3:16
-  
-  - loader:1101 Module._compile
-    node:internal/modules/cjs/loader:1101:14
-  
-  - loader:1153 Object.Module._extensions..js
-    node:internal/modules/cjs/loader:1153:10
-  
-  - loader:981 Module.load
-    node:internal/modules/cjs/loader:981:32
-  
-  - loader:822 Function.Module._load
-    node:internal/modules/cjs/loader:822:12
-  
-  - loader:1005 Module.require
-    node:internal/modules/cjs/loader:1005:19
-  
-  - ModuleBuildError: Module build failed (from ./node_modules/html-loader/dist/cjs.js):
-  
-  - Error: Cannot find module 'clean-css'
-  
-  - Require stack:
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-minifier-terser\src\htmlminifier.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-loader\dist\plugins\minimizer-plugin.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-loader\dist\plugins\index.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-loader\dist\index.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\html-loader\dist\cjs.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\loadLoader.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\loader-runner\lib\LoaderRunner.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\NormalModuleFactory.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\Compiler.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\webpack.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\lib\index.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack-cli\lib\webpack-cli.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack-cli\lib\bootstrap.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack-cli\bin\cli.js
-  
-  - - D:\Microverse\Module 2\Week 5\Foodeez\node_modules\webpack\bin\webpack.js
-  
-  - loader:933 Function.Module._resolveFilename
-    node:internal/modules/cjs/loader:933:15
-  
-  - loader:778 Function.Module._load
-    node:internal/modules/cjs/loader:778:27
-  
-  - loader:1005 Module.require
-    node:internal/modules/cjs/loader:1005:19
-  
-  - helpers:102 require
-    node:internal/modules/cjs/helpers:102:18
-  
-  - htmlminifier.js:3 Object.<anonymous>
-    [Foodeez]/[html-minifier-terser]/src/htmlminifier.js:3:16
-  
-  - loader:1101 Module._compile
-    node:internal/modules/cjs/loader:1101:14
-  
-  - loader:1153 Object.Module._extensions..js
-    node:internal/modules/cjs/loader:1153:10
-  
-  - loader:981 Module.load
-    node:internal/modules/cjs/loader:981:32
-  
-  - loader:822 Function.Module._load
-    node:internal/modules/cjs/loader:822:12
-  
-  - loader:1005 Module.require
-    node:internal/modules/cjs/loader:1005:19
-  
-  - NormalModule.js:753 processResult
-    [Foodeez]/[webpack]/lib/NormalModule.js:753:19
-  
-  - NormalModule.js:855 
-    [Foodeez]/[webpack]/lib/NormalModule.js:855:5
-  
-  - LoaderRunner.js:399 
-    [Foodeez]/[loader-runner]/lib/LoaderRunner.js:399:11
-  
-  - LoaderRunner.js:185 
-    [Foodeez]/[loader-runner]/lib/LoaderRunner.js:185:11
-  
-  - loadLoader.js:33 loadLoader
-    [Foodeez]/[loader-runner]/lib/loadLoader.js:33:11
-  
-  - LoaderRunner.js:182 iteratePitchingLoaders
-    [Foodeez]/[loader-runner]/lib/LoaderRunner.js:182:2
-  
-  - LoaderRunner.js:178 iteratePitchingLoaders
-    [Foodeez]/[loader-runner]/lib/LoaderRunner.js:178:10
-  
-  - LoaderRunner.js:189 
-    [Foodeez]/[loader-runner]/lib/LoaderRunner.js:189:18
-  
-  - loadLoader.js:53 handleResult
-    [Foodeez]/[loader-runner]/lib/loadLoader.js:53:2
-  
-  - loadLoader.js:35 loadLoader
-    [Foodeez]/[loader-runner]/lib/loadLoader.js:35:10
-  
-  - child-compiler.js:169 
-    [Foodeez]/[html-webpack-plugin]/lib/child-compiler.js:169:18
-  
-  - Compiler.js:564 
-    [Foodeez]/[webpack]/lib/Compiler.js:564:11
-  
-  - Compiler.js:1183 
-    [Foodeez]/[webpack]/lib/Compiler.js:1183:17
-  
-</pre>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script
+      src="https://kit.fontawesome.com/fe6dec7cca.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Foodeez</title>
+<script defer src="main.js"></script></head>
+
+<body>
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <a href="index.html"><img src="./assets/images/logo2.png" alt="Logo"></a>
+            </div>
+            <div class="nav-items">
+                <a href="index.html">Home</a>
+                <a href="#About">About Us</a>
+                <a href="#contact" class="reservation">Contact Us</a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <p id="mov-count"></p>
+        <ul class="list-items">
+
+        </ul>
+    </section>
+    <section class="popup">
+        <div class="display">
+            <div class="demo">
+                <img src="./images/demo.png" alt="Demo image">
+                <button class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+            <div class="description">
+                <h3>Title</h3>
+                <div class="list">
+                    <ul class="first-list">
+                        <li>Type: Food</li>
+                        <li>Type: Food</li>
+                        <li>Type: Food</li>
+                    </ul>
+                    <ul class="second-list">
+                        <li>Type: Food</li>
+                        <li>Type: Food</li>
+                        <li>Type: Food</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="comment-counter">
+                 <h3>Comments(2)</h3>
+                 <ul class="comments">
+                     <li>2/1/2022 Alex: I would love it.</li>
+                     <li>3/1/2022 Tarik: I loved it.</li>
+                 </ul>
+            </div>
+        </div>
+     <section class="comment">
+        <div class="add-comment">
+            <h3>Add Comment</h3>
+        </div>
+        <form action="https://formspree.io/f/xbjwrzvy" class="form">
+            <input type="text" name="name" id="name" placeholder="Your name">
+            <textarea name="description" id="description" cols="30" rows="10" placeholder="Your insight"></textarea>
+            <button class="submit-comment">Comment</button>
+        </form>
+     </section>
+ </section>
+    <footer>
+        <a href="index.html"><img src="./assets/images/logo2.png" alt="Logo"></a>
+        <p class="footer-text">Created by Hammas & Tarikwa collaboratively.</p>
+    </footer>
+</body>
+
+</html>
