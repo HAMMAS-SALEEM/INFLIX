@@ -103,8 +103,13 @@ li {
 }
 
 .popup {
-  background-color: rgb(247, 210, 155);
-  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 160%;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  display: none;
   flex-direction: column;
   align-items: center;
 }

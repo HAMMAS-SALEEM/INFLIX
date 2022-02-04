@@ -6,6 +6,8 @@ import './style.css';
 
 const itemContainer = document.querySelector('.list-items');
 const itemCounter = document.getElementById('mov-count');
+const popupClose = document.querySelector('.popupCrossBtn')
+const popupWindow = document.querySelector('.popup')
 
 window.addEventListener('load', async () => {
   await getApiData(itemContainer, itemCounter);
@@ -18,9 +20,13 @@ itemContainer.addEventListener('click', (event) => {
     const newVal = +likesContainer.innerHTML + 1;
     likesContainer.innerHTML = newVal;
   } else if (event.target.tagName === 'BUTTON') {
-    console.log('right');
+    popupWindow.style.display = 'flex'
   }
 });
+
+popupClose.addEventListener('click',()=>{
+  popupWindow.style.display = 'none'
+})
 
 // const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/'
 // const id = 'IRmcCRWo9KSYZTxv7MqM'
