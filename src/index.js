@@ -17,6 +17,8 @@ itemContainer.addEventListener('click', (event) => {
     const likesContainer = event.target.parentNode.querySelector('.total-likes');
     const newVal = +likesContainer.innerHTML + 1;
     likesContainer.innerHTML = newVal;
+  } else if(event.target.tagName==='BUTTON'){
+    console.log('right')
   }
 });
 
