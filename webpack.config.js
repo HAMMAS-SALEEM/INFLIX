@@ -12,7 +12,7 @@ module.exports = {
     }),
   ],
   output: {
-    filename: 'bundle.js',
+    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -20,7 +20,7 @@ module.exports = {
     rules: [
       {
         test: /\.html$/i,
-        loader: 'html-loader',
+        loader: "html-loader",
       },
       {
         test: /\.css$/i,
@@ -35,8 +35,12 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\.html$/i,
-        loader: 'html-loader',
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
     ],
   },
