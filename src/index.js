@@ -3,7 +3,6 @@ import {
   addLike,
 } from './components/api.js';
 import './style.css';
-import html from './index.html';
 
 const itemContainer = document.querySelector('.list-items');
 const itemCounter = document.getElementById('mov-count');
