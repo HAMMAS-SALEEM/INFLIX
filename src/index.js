@@ -1,12 +1,13 @@
 import {
   getApiData,
   addLike,
+  postComment,
 } from './components/api.js';
+import showPop from './components/popup.js';
 import './style.css';
 
 const itemContainer = document.querySelector('.list-items');
 const itemCounter = document.getElementById('mov-count');
-const popupClose = document.querySelector('.popupCrossBtn');
 const popupWindow = document.querySelector('.popup');
 
 window.addEventListener('load', async () => {
@@ -21,11 +22,26 @@ itemContainer.addEventListener('click', (event) => {
     likesContainer.innerHTML = newVal;
   } else if (event.target.tagName === 'BUTTON') {
     popupWindow.style.display = 'flex';
+    const poster = event.target.parentNode.querySelector('.mov-post').src;
+    const name = event.target.parentNode.querySelector('.mov-name').innerHTML;
+    const { id } = event.target;
+    showPop(popupWindow, poster, name, id);
+    document.querySelector('.form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const username = document.querySelector('.input1');
+      const comment = document.querySelector('.input2');
+      postComment(id, username, comment);
+      // createApp();
+    });
+    // document.body.style.overflow= 'hidden'
   }
 });
 
-popupClose.addEventListener('click', () => {
-  popupWindow.style.display = 'none';
+popupWindow.addEventListener('click', (event) => {
+  if (event.target.tagName === 'I') {
+    popupWindow.style.display = 'none';
+    // document.body.style.overflow= 'visible'
+  }
 });
 
 // const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/'
@@ -46,9 +62,9 @@ popupClose.addEventListener('click', () => {
 // };
 
 // const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/likes'
-
-// const createApp = async () => {
-//   await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', {
+// const urlTest = 'Hieu2q5gMM4xiiViNqJ6';
+// const createApp = () => {
+//   fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', {
 //     method: 'POST',
 //     headers: {
 //       'Content-type': 'application/json; charset=UTF-8',
@@ -58,7 +74,7 @@ popupClose.addEventListener('click', () => {
 //     })
 //   })
 //     .then((response) => response.text())
-//     .then((json) =>json);
+//     .then((json) =>console.log(json));
 // };
 
 // let a = 'RtogD48rFUxgVZ4q9xII';

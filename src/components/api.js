@@ -12,7 +12,7 @@ export const addLike = (id) => {
     }),
   })
     .then((response) => response.text())
-    .then((json) => json);
+    .then((json) => console.log(json));
 };
 
 const getLikes = async () => {
@@ -42,4 +42,24 @@ export const getApiData = (iContain, itemCount) => {
     .then((data) => {
       showUI(data, iContain, itemCount);
     });
+};
+
+export const postComment = (id, username, comment) => {
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/comments', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: id,
+      username: username.value,
+      comment: comment.value,
+    }),
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json))
+    .catch((err) => console.log(err));
+
+  username.value = '';
+  comment.value = '';
 };
