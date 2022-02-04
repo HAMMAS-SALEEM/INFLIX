@@ -10,9 +10,9 @@ const showPop = (popupWindow, poster, name, id) => {
                 <h3 class="mov-title">${name}</h3>
             </div>
             <div class="comment-counter">
-                <h3>Comments(2)</h3>
-                <ul class="comments">
-                    
+                <h3 class='comments-counter-hammas'></h3>
+                <ul class="comments-contain">
+    
                 </ul>
             </div>
             <div class="comment">

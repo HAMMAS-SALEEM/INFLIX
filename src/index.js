@@ -1,8 +1,8 @@
+import { postComment, getComments } from './components/comments.js';
 import {
   getApiData,
   addLike,
-  postComment,
-} from './components/api.js';
+} from './components/likeApi.js';
 import showPop from './components/popup.js';
 import './style.css';
 
@@ -26,12 +26,15 @@ itemContainer.addEventListener('click', (event) => {
     const name = event.target.parentNode.querySelector('.mov-name').innerHTML;
     const { id } = event.target;
     showPop(popupWindow, poster, name, id);
+    console.log(document.querySelector('.comments-contain'));
+    const commentContainer = document.querySelector('.comments-contain');
+    const commentCounter = document.querySelector('.comments-counter-hammas');
+    getComments(id, commentContainer, commentCounter);
     document.querySelector('.form').addEventListener('submit', (event) => {
       event.preventDefault();
       const username = document.querySelector('.input1');
       const comment = document.querySelector('.input2');
-      postComment(id, username, comment);
-      // createApp();
+      postComment(id, username, comment, commentContainer, commentCounter);
     });
     // document.body.style.overflow= 'hidden'
   }
@@ -40,6 +43,7 @@ itemContainer.addEventListener('click', (event) => {
 popupWindow.addEventListener('click', (event) => {
   if (event.target.tagName === 'I') {
     popupWindow.style.display = 'none';
+    popupWindow.innerHTML = '';
     // document.body.style.overflow= 'visible'
   }
 });
