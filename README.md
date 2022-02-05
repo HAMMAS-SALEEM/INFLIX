@@ -6,6 +6,10 @@ It is a JavaScript group capstone project built with an external API.
 
 ![App Screenshot]()
 
+## Video Presentation
+
+[Click on the link to see the presentation](https://www.loom.com/share/b423886962bd42afb9f12c3e6f2986ea)
+
 ## Live Demo
 
 [Live Demo]
