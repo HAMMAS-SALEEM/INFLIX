@@ -8,11 +8,16 @@
     "start": "webpack serve --open",
     "build": "webpack"
   },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.4.6",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^6.5.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
