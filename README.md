@@ -1,21 +1,52 @@
-## Foodeez
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-It is a JavaScript group capstone project built with an external API.
+# Leaderboard
+> This web application is a type of a scoreboard showing the names and current scores of the leading competitors in any field which is using API's to get and set data.
 
-## Screenshot
 
-![App Screenshot]()
+![SCREENSHOT](./src/components/images/leaderboard-desktop.GIF)
+![SCREENSHOT](./src/components/images/leaderboard-mob.GIF)
 
-## Live Demo
 
-[Live Demo]
 ## Built With
 
 - HTML
 - CSS
 - JavaScript
-- Webpack
-- Jest
+- Webpacks
+
+## Get Live Demo
+
+<!-- [Live Demo Link](https://hammas-saleem.github.io/ToDoList/) -->
+
+
+## Clone and review it
+
+Run the following commands to clone and run it.
+
+### To clone the repository
+
+  `git clone git@github.com:HAMMAS-SALEEM/ToDoList.git`
+
+### To enter Directory
+
+`cd ToDoList`
+
+### To Install Packages
+
+`npm install`
+
+### To run project on local server
+
+`npm start`
+
+### To run project tests
+
+`npm test`
+
+### To open project with vs code 
+
+`code .`
 
 ## Authors
 
@@ -31,6 +62,21 @@ It is a JavaScript group capstone project built with an external API.
 - Twitter: [Tarikwa Tesfa](https://twitter.com/tarik_tesfa)
 - LinkedIn: [Tarikwa Tesfa](https://www.linkedin.com/in/tarikwa-tesfa-232a64167/)
 
-## Show your support
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome!
+Feel free to check the [issues page](../../issues/).
 
-Give a ⭐ if you like this project!
+## Show your support
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+This project is [MIT](./MIT.md) licensed.
+
+
+
+
