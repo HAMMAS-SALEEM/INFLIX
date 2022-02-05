@@ -11,8 +11,8 @@ export const addLike = (id) => {
       item_id: id,
     }),
   })
-    .then((response) => response.text())
-    .then((json) => console.log(json));
+    .then(response=>response.text())
+    .then(json=>json);
 };
 
 const getLikes = async () => {

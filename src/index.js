@@ -26,7 +26,6 @@ itemContainer.addEventListener('click', (event) => {
     const name = event.target.parentNode.querySelector('.mov-name').innerHTML;
     const { id } = event.target;
     showPop(popupWindow, poster, name, id);
-    console.log(document.querySelector('.comments-contain'));
     const commentContainer = document.querySelector('.comments-contain');
     const commentCounter = document.querySelector('.comments-counter-hammas');
     getComments(id, commentContainer, commentCounter);
@@ -36,7 +35,7 @@ itemContainer.addEventListener('click', (event) => {
       const comment = document.querySelector('.input2');
       postComment(id, username, comment, commentContainer, commentCounter);
     });
-    document.body.style.overflow= 'hidden'
+    document.body.style.overflow = 'hidden';
   }
 });
 
@@ -44,7 +43,7 @@ popupWindow.addEventListener('click', (event) => {
   if (event.target.tagName === 'I') {
     popupWindow.style.display = 'none';
     popupWindow.innerHTML = '';
-    document.body.style.overflow= 'visible'
+    document.body.style.overflow = 'visible';
   }
 });
 
