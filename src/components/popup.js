@@ -12,6 +12,7 @@ const showPop = (popupWindow, poster, name, id) => {
             <div class="comment-counter">
                 <h3 class='comments-counter-hammas'></h3>
                 <ul class="comments-contain">
+            
                 </ul>
             </div>
             <div class="comment">

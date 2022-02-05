@@ -39,12 +39,14 @@ itemContainer.addEventListener('click', (event) => {
       const username = document.querySelector('.input1');
       const comment = document.querySelector('.input2');
       postComment(id, username, comment);
+      const tComments = document.querySelector('.comment-count-number');
+      const latestComment = +tComments.innerHTML + 1;
+      tComments.innerHTML = latestComment;
+      const data = new Date();
+      const dateComment = `${data.getFullYear()}-0${data.getMonth()}-0${data.getDate()}`;
+      commentContainer.innerHTML += `<li class="comment-item">${dateComment} ${username.value}: ${comment.value}</li>`;
       username.value = '';
       comment.value = '';
-      // const commentContainer = document.querySelector('.comments-contain');
-      commentContainer.innerHTML = '';
-      // const commentCounter = document.querySelector('.comments-counter-hammas');
-      getComments(id, commentContainer, commentCounter);
     });
     document.body.style.overflow = 'hidden';
   }

@@ -47,13 +47,6 @@ const postComment = (id, username, comment) => {
     .then((response) => response.json())
     .then((json) => json)
     .catch((err) => err);
-
-  username.value = '';
-  comment.value = '';
-  const commentContainer = document.querySelector('.comments-contain');
-  commentContainer.innerHTML=``
-  const commentCounter = document.querySelector('.comments-counter-hammas');
-  getComments(id, commentContainer, commentCounter);
 };
 
 /***/ }),
@@ -182,6 +175,7 @@ const showPop = (popupWindow, poster, name, id) => {
             <div class="comment-counter">
                 <h3 class='comments-counter-hammas'></h3>
                 <ul class="comments-contain">
+            
                 </ul>
             </div>
             <div class="comment">
@@ -775,7 +769,9 @@ itemContainer.addEventListener('click', (event) => {
     popupWindow.style.display = 'flex';
     const poster = event.target.parentNode.querySelector('.mov-post').src;
     const name = event.target.parentNode.querySelector('.mov-name').innerHTML;
-    const { id } = event.target;
+    const {
+      id,
+    } = event.target;
     (0,_components_popup_js__WEBPACK_IMPORTED_MODULE_2__["default"])(popupWindow, poster, name, id);
     const commentContainer = document.querySelector('.comments-contain');
     const commentCounter = document.querySelector('.comments-counter-hammas');
@@ -784,7 +780,12 @@ itemContainer.addEventListener('click', (event) => {
       event.preventDefault();
       const username = document.querySelector('.input1');
       const comment = document.querySelector('.input2');
+      let data = new Date()
+      let dateComment = data.getFullYear() + '-0' + data.getMonth() + '-0' + data.getDate()
+      commentContainer.innerHTML += `<li class="comment-item">${dateComment} ${username}: ${comment}</li>`;
       (0,_components_comments_js__WEBPACK_IMPORTED_MODULE_0__.postComment)(id, username, comment);
+      username.value = '';
+      comment.value = '';
     });
     document.body.style.overflow = 'hidden';
   }
@@ -795,9 +796,9 @@ popupWindow.addEventListener('click', (event) => {
     popupWindow.style.display = 'none';
     popupWindow.innerHTML = '';
     document.body.style.overflow = 'visible';
+
   }
 });
-
 })();
 
 /******/ })()
