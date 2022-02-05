@@ -32,7 +32,7 @@ export const postComment = (id, username, comment) => {
   })
     .then((response) => response.text())
     .then((json) => json)
-    .catch((error)=>{
-      console.log(error)
-    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
