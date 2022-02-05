@@ -95,6 +95,7 @@ li {
 
 .comments-contain {
   height: 100px;
+  width: 300px;
   overflow-y: scroll;
 }
 
@@ -108,15 +109,16 @@ li {
 }
 
 .popup {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
-  height: 160%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   display: none;
   flex-direction: column;
   align-items: center;
+  overflow: scroll;
 }
 
 .popup-card {
@@ -194,6 +196,13 @@ footer {
   width: 250px;
 }
 
+.for-fullscreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
 @media screen and (min-width: 768px) {
   .list-items {
     flex-flow: row wrap;
@@ -206,7 +215,7 @@ footer {
   }
 
   .for-fullscreen {
-    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     width: 90%;
   }

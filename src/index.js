@@ -36,7 +36,7 @@ itemContainer.addEventListener('click', (event) => {
       const comment = document.querySelector('.input2');
       postComment(id, username, comment, commentContainer, commentCounter);
     });
-    // document.body.style.overflow= 'hidden'
+    document.body.style.overflow= 'hidden'
   }
 });
 
@@ -44,7 +44,7 @@ popupWindow.addEventListener('click', (event) => {
   if (event.target.tagName === 'I') {
     popupWindow.style.display = 'none';
     popupWindow.innerHTML = '';
-    // document.body.style.overflow= 'visible'
+    document.body.style.overflow= 'visible'
   }
 });
 
