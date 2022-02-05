@@ -14,7 +14,7 @@ const showData = (itemContainer, storage) => {
 <i id=${item.id} class="fas fa-heart"></i>
 </div>
 </div>
-<button type="button" class="comments">Comments</button>
+<button type="button" id=${item.id} class="comments">Comments</button>
 </li>`;
     }
   });
