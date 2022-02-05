@@ -19,7 +19,7 @@ export const getComments = async (id, commentContainer, commentCounter) => {
 };
 
 export const postComment = (id, username, comment) => {
-  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/comments', {
+  const a = fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/comments', {
     method: 'POST',
     body: JSON.stringify({
       item_id: id,
@@ -29,7 +29,7 @@ export const postComment = (id, username, comment) => {
     headers: {
       'Content-type': 'application/json, charset=UTF-8',
     },
-  })
-    .then((response) => response.json())
-    .then((json) => json);
+
+  });
+  return a.json();
 };
