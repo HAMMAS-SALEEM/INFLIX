@@ -1,11 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Leaderboard
-> This web application is a type of a scoreboard showing the names and current scores of the leading competitors in any field which is using API's to get and set data.
-
-
-![SCREENSHOT](./src/components/images/leaderboard-desktop.GIF)
-![SCREENSHOT](./src/components/images/leaderboard-mob.GIF)
+> This web application is a type of a showcase of movies with details of the movies and an option to get comments on each movie. which is using API's to get and set data.
 
 
 ## Built With
