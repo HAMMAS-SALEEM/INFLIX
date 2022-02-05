@@ -3,6 +3,15 @@
 # Leaderboard
 > This web application is a type of a showcase of movies with details of the movies and an option to get comments on each movie. which is using API's to get and set data.
 
+![App Screenshot]()
+
+## Video Presentation
+
+[Click on the link to see the presentation](https://www.loom.com/share/b423886962bd42afb9f12c3e6f2986ea)
+
+## Live Demo
+
+[Live Demo]()
 
 ## Built With
 
@@ -72,7 +81,3 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 This project is [MIT](./MIT.md) licensed.
-
-
-
-
