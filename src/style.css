@@ -21,6 +21,11 @@ a {
   color: #000;
 }
 
+.fa-bars {
+  display: block;
+  font-size: 24px;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -29,7 +34,7 @@ a {
 }
 
 .nav-items {
-  display: flex;
+  display: none;
   justify-content: flex-end;
   margin-right: 100px;
 }
@@ -222,5 +227,13 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     width: 90%;
+  }
+
+  .fa-bars {
+    display: none;
+  }
+
+  .nav-items {
+    display: flex;
   }
 }
