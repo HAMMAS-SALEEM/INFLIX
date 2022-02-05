@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+
 export const countComment = (json) => {
   if (json.length > 0) {
     return `Comments(<span class='comment-count-number'>${json.length}</span>)`;
