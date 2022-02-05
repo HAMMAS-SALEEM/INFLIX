@@ -1,10 +1,8 @@
-/* eslint-disable consistent-return */
-
 export const countComment = (json) => {
   if (json.length > 0) {
-    return `Comments(<span class='comment-count-number'>${json.length}</span>)`;
+    return `Comments(<span class="comment-count-number">${json.length}</span>)`;
   }
-  // return '<li>No comments</li>';
+  return '<li>No comments</li>';
 };
 
 export const getComments = async (id, commentContainer, commentCounter) => {
@@ -21,17 +19,20 @@ export const getComments = async (id, commentContainer, commentCounter) => {
 };
 
 export const postComment = (id, username, comment) => {
-  const a = fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/comments', {
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/comments', {
     method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
     body: JSON.stringify({
       item_id: id,
       username: username.value,
       comment: comment.value,
     }),
-    headers: {
-      'Content-type': 'application/json, charset=UTF-8',
-    },
-
-  });
-  return a.json();
+  })
+    .then((response) => response.text())
+    .then((json) => json)
+    .catch((error)=>{
+      console.log(error)
+    })
 };
