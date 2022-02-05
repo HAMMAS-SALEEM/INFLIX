@@ -1,6 +1,6 @@
 import {
   postComment,
-  getComments
+  getComments,
 } from './components/comments.js';
 import {
   getApiData,
@@ -28,7 +28,7 @@ itemContainer.addEventListener('click', (event) => {
     const poster = event.target.parentNode.querySelector('.mov-post').src;
     const name = event.target.parentNode.querySelector('.mov-name').innerHTML;
     const {
-      id
+      id,
     } = event.target;
     showPop(popupWindow, poster, name, id);
     const commentContainer = document.querySelector('.comments-contain');
@@ -42,7 +42,7 @@ itemContainer.addEventListener('click', (event) => {
       username.value = '';
       comment.value = '';
       // const commentContainer = document.querySelector('.comments-contain');
-      commentContainer.innerHTML = ``
+      commentContainer.innerHTML = '';
       // const commentCounter = document.querySelector('.comments-counter-hammas');
       getComments(id, commentContainer, commentCounter);
     });
