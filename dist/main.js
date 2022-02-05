@@ -11,41 +11,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "postComment": () => (/* binding */ postComment)
 /* harmony export */ });
 const getComments = (id, commentContainer, commentCounter) => {
-    fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/comments?item_id=${id}`, {})
-        .then((response) => response.json())
-        .then((json) => {
-            if (json.length > 0) {
-                commentContainer.innerHTML = '<li></li>';
-                json.forEach((item) => {
-                    commentContainer.innerHTML += `<li>${item.creation_date} ${item.username}: ${item.comment}</li>`;
-                });
-                commentCounter.innerHTML = `Comments(${json.length})`;
-            } else {
-                commentContainer.innerHTML = `<li>No comments</li>`
-            }
+  fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/comments?item_id=${id}`, {})
+    .then((response) => response.json())
+    .then((json) => {
+      if (json.length > 0) {
+        commentContainer.innerHTML = '<li></li>';
+        json.forEach((item) => {
+          commentContainer.innerHTML += `<li>${item.creation_date} ${item.username}: ${item.comment}</li>`;
         });
+        commentCounter.innerHTML = `Comments(${json.length})`;
+      } else {
+        commentContainer.innerHTML = '<li>No comments</li>';
+      }
+    });
 };
 
 const postComment = (id, username, comment, commentContainer, commentCounter) => {
-    fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/comments', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify({
-                item_id: id,
-                username: username.value,
-                comment: comment.value,
-            }),
-        })
-        .then((response) => response.json())
-        .then((json) => json)
-        .catch((err) => err);
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/comments', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: id,
+      username: username.value,
+      comment: comment.value,
+    }),
+  })
+    .then((response) => response.json())
+    .then((json) => json)
+    .catch((err) => err);
 
-    username.value = '';
-    comment.value = '';
+  username.value = '';
+  comment.value = '';
 
-    getComments(id, commentContainer, commentCounter);
+  getComments(id, commentContainer, commentCounter);
 };
 
 /***/ }),
@@ -72,8 +72,8 @@ const addLike = (id) => {
       item_id: id,
     }),
   })
-    .then((response) => response.text())
-    .then((json) => console.log(json));
+    .then(response=>response.text())
+    .then(json=>json);
 };
 
 const getLikes = async () => {
@@ -174,7 +174,6 @@ const showPop = (popupWindow, poster, name, id) => {
             <div class="comment-counter">
                 <h3 class='comments-counter-hammas'></h3>
                 <ul class="comments-contain">
-                <li></li>    
                 </ul>
             </div>
             <div class="comment">
@@ -546,7 +545,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 10px;\r\n  margin: 10px;\r\n}\r\n\r\n.nav-items a {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n}\r\n\r\n#mov-count {\r\n  color: darkmagenta;\r\n  text-align: center;\r\n  margin: 10px;\r\n  font-size: 24px;\r\n  font-weight: 800;\r\n}\r\n\r\n.list-items {\r\n  margin: 40px auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.mov-detail {\r\n  display: flex;\r\n  margin: 20px 0;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n  width: 300px;\r\n  font-weight: bolder;\r\n}\r\n\r\n.likes {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.fa-heart {\r\n  margin-left: 5px;\r\n  font-size: 24px;\r\n  color: hotpink;\r\n  cursor: pointer;\r\n}\r\n\r\n.comments {\r\n  height: 40px;\r\n}\r\n\r\n.comments-contain {\r\n  height: 100px;\r\n  width: 300px;\r\n  overflow-y: scroll;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 20px;\r\n  background: whitesmoke;\r\n  width: 270px;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.popup {\r\n  position: absolute;\r\n  top: 0;\r\n  width: 100%;\r\n  height: 160%;\r\n  background-color: rgba(0, 0, 0, 0.3);\r\n  backdrop-filter: blur(10px);\r\n  display: none;\r\n  flex-direction: column;\r\n  align-items: center;\r\n}\r\n\r\n.popup-card {\r\n  background-color: rgb(255, 96, 96);\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  width: 90%;\r\n  padding: 5px;\r\n  border-radius: 10px;\r\n  padding-bottom: 50px;\r\n  margin: 30px 0;\r\n}\r\n\r\n.fa-times {\r\n  align-self: end;\r\n  margin: 0 5px 20px 0;\r\n  font-size: 24px;\r\n}\r\n\r\n.demo,\r\n.demo img {\r\n  width: 280px;\r\n  height: 420px;\r\n}\r\n\r\n.demo {\r\n  border: 6px solid white;\r\n  border-radius: 5px;\r\n}\r\n\r\n.mov-title {\r\n  text-align: center;\r\n  margin: 15px 0;\r\n  font-size: 28px;\r\n}\r\n\r\n.form {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.input {\r\n  margin-bottom: 5px;\r\n  border-radius: 5px;\r\n  border: none;\r\n  text-indent: 5px;\r\n}\r\n\r\n.input1 {\r\n  margin-top: 5px;\r\n  height: 40px;\r\n}\r\n\r\n.input2 {\r\n  padding-top: 7px;\r\n}\r\n\r\n.submit-comment {\r\n  height: 35px;\r\n}\r\n\r\nfooter {\r\n  display: flex;\r\n  background-color: rosybrown;\r\n  height: 100px;\r\n  width: 90%;\r\n  margin: auto;\r\n  justify-content: space-evenly;\r\n  align-items: center;\r\n}\r\n\r\n.footer-text {\r\n  font-weight: 600;\r\n  width: 250px;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .list-items {\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n\r\n  .for-fullscreen {\r\n    display: flex;\r\n    justify-content: space-around;\r\n    width: 90%;\r\n  }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 10px;\r\n  margin: 10px;\r\n}\r\n\r\n.nav-items a {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n}\r\n\r\n#mov-count {\r\n  color: darkmagenta;\r\n  text-align: center;\r\n  margin: 10px;\r\n  font-size: 24px;\r\n  font-weight: 800;\r\n}\r\n\r\n.list-items {\r\n  margin: 40px auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.mov-detail {\r\n  display: flex;\r\n  margin: 20px 0;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n  width: 300px;\r\n  font-weight: bolder;\r\n}\r\n\r\n.likes {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.fa-heart {\r\n  margin-left: 5px;\r\n  font-size: 24px;\r\n  color: hotpink;\r\n  cursor: pointer;\r\n}\r\n\r\n.comments {\r\n  height: 40px;\r\n}\r\n\r\n.comments-contain {\r\n  height: 100px;\r\n  width: 300px;\r\n  overflow-y: scroll;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 20px;\r\n  background: whitesmoke;\r\n  width: 270px;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.popup {\r\n  position: fixed;\r\n  top: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(0, 0, 0, 0.3);\r\n  backdrop-filter: blur(10px);\r\n  display: none;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  overflow: scroll;\r\n}\r\n\r\n.popup-card {\r\n  background-color: rgb(255, 96, 96);\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  width: 90%;\r\n  padding: 5px;\r\n  border-radius: 10px;\r\n  padding-bottom: 50px;\r\n  margin: 30px 0;\r\n}\r\n\r\n.fa-times {\r\n  align-self: end;\r\n  margin: 0 5px 20px 0;\r\n  font-size: 24px;\r\n}\r\n\r\n.demo,\r\n.demo img {\r\n  width: 280px;\r\n  height: 420px;\r\n}\r\n\r\n.demo {\r\n  border: 6px solid white;\r\n  border-radius: 5px;\r\n}\r\n\r\n.mov-title {\r\n  text-align: center;\r\n  margin: 15px 0;\r\n  font-size: 28px;\r\n}\r\n\r\n.form {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.input {\r\n  margin-bottom: 5px;\r\n  border-radius: 5px;\r\n  border: none;\r\n  text-indent: 5px;\r\n}\r\n\r\n.input1 {\r\n  margin-top: 5px;\r\n  height: 40px;\r\n}\r\n\r\n.input2 {\r\n  padding-top: 7px;\r\n}\r\n\r\n.submit-comment {\r\n  height: 35px;\r\n}\r\n\r\nfooter {\r\n  display: flex;\r\n  background-color: rosybrown;\r\n  height: 100px;\r\n  width: 90%;\r\n  margin: auto;\r\n  justify-content: space-evenly;\r\n  align-items: center;\r\n}\r\n\r\n.footer-text {\r\n  font-weight: 600;\r\n  width: 250px;\r\n}\r\n\r\n.for-fullscreen {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  width: 90%;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .list-items {\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n\r\n  .for-fullscreen {\r\n    flex-direction: row;\r\n    justify-content: space-around;\r\n    width: 90%;\r\n  }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -770,7 +769,6 @@ itemContainer.addEventListener('click', (event) => {
     const name = event.target.parentNode.querySelector('.mov-name').innerHTML;
     const { id } = event.target;
     (0,_components_popup_js__WEBPACK_IMPORTED_MODULE_2__["default"])(popupWindow, poster, name, id);
-    console.log(document.querySelector('.comments-contain'));
     const commentContainer = document.querySelector('.comments-contain');
     const commentCounter = document.querySelector('.comments-counter-hammas');
     (0,_components_comments_js__WEBPACK_IMPORTED_MODULE_0__.getComments)(id, commentContainer, commentCounter);
@@ -780,7 +778,7 @@ itemContainer.addEventListener('click', (event) => {
       const comment = document.querySelector('.input2');
       (0,_components_comments_js__WEBPACK_IMPORTED_MODULE_0__.postComment)(id, username, comment, commentContainer, commentCounter);
     });
-    // document.body.style.overflow= 'hidden'
+    document.body.style.overflow = 'hidden';
   }
 });
 
@@ -788,7 +786,7 @@ popupWindow.addEventListener('click', (event) => {
   if (event.target.tagName === 'I') {
     popupWindow.style.display = 'none';
     popupWindow.innerHTML = '';
-    // document.body.style.overflow= 'visible'
+    document.body.style.overflow = 'visible';
   }
 });
 

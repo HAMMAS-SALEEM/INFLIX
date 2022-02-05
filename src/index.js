@@ -46,38 +46,3 @@ popupWindow.addEventListener('click', (event) => {
     document.body.style.overflow = 'visible';
   }
 });
-
-// const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/'
-// const id = 'IRmcCRWo9KSYZTxv7MqM'
-
-// const registerNewApp = async () => {
-//   const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', {
-//     method: 'POST',
-//     body: JSON.stringify({
-//       name: 'Foodeez',
-//     }),
-//     headers: {
-//       'Content-type': 'application/json; charset=UTF-8',
-//     },
-//   });
-//   const data = await response.text();
-//   return data;
-// };
-
-// const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/likes'
-// const urlTest = 'Hieu2q5gMM4xiiViNqJ6';
-// const createApp = () => {
-//   fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', {
-//     method: 'POST',
-//     headers: {
-//       'Content-type': 'application/json; charset=UTF-8',
-//     },
-//     body: JSON.stringify({
-//       name: 'Foodeez'
-//     })
-//   })
-//     .then((response) => response.text())
-//     .then((json) =>console.log(json));
-// };
-
-// let a = 'RtogD48rFUxgVZ4q9xII';

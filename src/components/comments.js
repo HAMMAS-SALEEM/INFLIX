@@ -5,7 +5,7 @@ export const getComments = (id, commentContainer, commentCounter) => {
       if (json.length > 0) {
         commentContainer.innerHTML = '<li></li>';
         json.forEach((item) => {
-          commentContainer.innerHTML += `<li>${item.creation_date} ${item.username}: ${item.comment}</li>`;
+          commentContainer.innerHTML += `<li class="comment-item">${item.creation_date} ${item.username}: ${item.comment}</li>`;
         });
         commentCounter.innerHTML = `Comments(${json.length})`;
       } else {
