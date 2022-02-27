@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Leaderboard
+# INFLIX
 > This web application is a type of a showcase of movies with details of the movies and an option to get comments on each movie. which is using API's to get and set data.
 
 ![App Screenshot](./src/assets/images/capstone.gif)
