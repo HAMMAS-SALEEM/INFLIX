@@ -11,13 +11,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "getComments": () => (/* binding */ getComments),
 /* harmony export */   "postComment": () => (/* binding */ postComment)
 /* harmony export */ });
-/* eslint-disable consistent-return */
-
 const countComment = (json) => {
   if (json.length > 0) {
-    return `Comments(<span class='comment-count-number'>${json.length}</span>)`;
+    return `Comments(<span class="comment-count-number">${json.length}</span>)`;
   }
-  // return '<li>No comments</li>';
+  return '<li>No comments</li>';
 };
 
 const getComments = async (id, commentContainer, commentCounter) => {
@@ -34,19 +32,22 @@ const getComments = async (id, commentContainer, commentCounter) => {
 };
 
 const postComment = (id, username, comment) => {
-  const a = fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/comments', {
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IRmcCRWo9KSYZTxv7MqM/comments', {
     method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
     body: JSON.stringify({
       item_id: id,
       username: username.value,
       comment: comment.value,
     }),
-    headers: {
-      'Content-type': 'application/json, charset=UTF-8',
-    },
-
-  });
-  return a.json();
+  })
+    .then((response) => response.text())
+    .then((json) => json)
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
 /***/ }),
@@ -547,7 +548,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  margin: 0;\n  top: 0;\n}\n\nbody {\n  font-family: 'Lato', sans-serif;\n}\n\nheader {\n  background-color: rgb(248, 248, 248);\n  padding: 5px;\n  width: 100%;\n  margin: 0;\n}\n\na {\n  text-decoration: none;\n  color: #000;\n}\n\n.fa-bars {\n  display: block;\n  font-size: 24px;\n}\n\n.nav {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin: 0 40px;\n}\n\n.nav-items {\n  display: none;\n  justify-content: flex-end;\n  margin-right: 100px;\n}\n\n.logo a {\n  padding: 5px 10px;\n  margin: 10px;\n}\n\n.nav-items a {\n  margin: 0 15px;\n  font-size: 18px;\n  font-weight: bold;\n}\n\n#mov-count {\n  color: darkmagenta;\n  text-align: center;\n  margin: 10px;\n  font-size: 24px;\n  font-weight: 800;\n}\n\n.list-items {\n  margin: 40px auto;\n  display: flex;\n  flex-direction: column;\n}\n\n.mov-detail {\n  display: flex;\n  margin: 20px 0;\n}\n\nli {\n  list-style: none;\n}\n\n.mov-post {\n  height: 420px;\n}\n\n.mov-name {\n  width: 300px;\n  font-weight: bolder;\n}\n\n.likes {\n  display: flex;\n  align-items: center;\n}\n\n.fa-heart {\n  margin-left: 5px;\n  font-size: 24px;\n  color: hotpink;\n  cursor: pointer;\n}\n\n.comments {\n  height: 40px;\n}\n\n.comments-contain {\n  height: 100px;\n  width: 300px;\n  overflow-y: scroll;\n}\n\n.item {\n  margin-bottom: 30px;\n  padding: 20px;\n  background: whitesmoke;\n  width: 270px;\n  display: flex;\n  flex-direction: column;\n}\n\n.popup {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.3);\n  backdrop-filter: blur(10px);\n  display: none;\n  flex-direction: column;\n  align-items: center;\n  overflow: scroll;\n}\n\n.popup-card {\n  background-color: rgb(255, 96, 96);\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 90%;\n  padding: 5px;\n  border-radius: 10px;\n  padding-bottom: 50px;\n  margin: 30px 0;\n}\n\n.fa-times {\n  align-self: end;\n  margin: 0 5px 20px 0;\n  font-size: 24px;\n}\n\n.demo,\n.demo img {\n  width: 280px;\n  height: 420px;\n}\n\n.demo {\n  border: 6px solid white;\n  border-radius: 5px;\n}\n\n.mov-title {\n  text-align: center;\n  margin: 15px 0;\n  font-size: 28px;\n}\n\n.comment-item {\n  padding: 20px;\n}\n\n.form {\n  display: flex;\n  flex-direction: column;\n}\n\n.input {\n  margin-bottom: 5px;\n  border-radius: 5px;\n  border: none;\n  text-indent: 5px;\n}\n\n.input1 {\n  margin-top: 5px;\n  height: 40px;\n}\n\n.input2 {\n  padding-top: 7px;\n}\n\n.submit-comment {\n  height: 35px;\n}\n\nfooter {\n  display: flex;\n  background-color: rosybrown;\n  height: 100px;\n  width: 90%;\n  margin: auto;\n  justify-content: space-evenly;\n  align-items: center;\n}\n\n.footer-text {\n  font-weight: 600;\n  width: 250px;\n}\n\n.for-fullscreen {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 90%;\n}\n\n@media screen and (min-width: 768px) {\n  .list-items {\n    flex-flow: row wrap;\n    width: 95%;\n    margin: 40px auto;\n  }\n\n  .comments {\n    width: 100%;\n  }\n\n  .for-fullscreen {\n    flex-direction: row;\n    justify-content: space-around;\n    width: 90%;\n  }\n\n  .fa-bars {\n    display: none;\n  }\n\n  .nav-items {\n    display: flex;\n  }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  top: 0;\r\n}\r\n\r\nbody {\r\n  font-family: 'Lato', sans-serif;\r\n}\r\n\r\nheader {\r\n  background-color: rgb(248, 248, 248);\r\n  padding: 5px;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #000;\r\n}\r\n\r\n.fa-bars {\r\n  display: block;\r\n  font-size: 24px;\r\n}\r\n\r\n.nav {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin: 0 40px;\r\n}\r\n\r\n.nav-items {\r\n  display: none;\r\n  justify-content: flex-end;\r\n  margin-right: 100px;\r\n}\r\n\r\n.logo a {\r\n  padding: 5px 10px;\r\n  margin: 10px;\r\n}\r\n\r\n.nav-items a {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n}\r\n\r\n#mov-count {\r\n  color: darkmagenta;\r\n  text-align: center;\r\n  margin: 10px;\r\n  font-size: 24px;\r\n  font-weight: 800;\r\n}\r\n\r\n.list-items {\r\n  margin: 40px auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.mov-detail {\r\n  display: flex;\r\n  margin: 20px 0;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.mov-post {\r\n  height: 420px;\r\n}\r\n\r\n.mov-name {\r\n  width: 300px;\r\n  font-weight: bolder;\r\n}\r\n\r\n.likes {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.fa-heart {\r\n  margin-left: 5px;\r\n  font-size: 24px;\r\n  color: hotpink;\r\n  cursor: pointer;\r\n}\r\n\r\n.comments {\r\n  height: 40px;\r\n}\r\n\r\n.comments-contain {\r\n  height: 100px;\r\n  width: 300px;\r\n  overflow-y: scroll;\r\n}\r\n\r\n.item {\r\n  margin-bottom: 30px;\r\n  padding: 20px;\r\n  background: whitesmoke;\r\n  width: 270px;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.popup {\r\n  position: fixed;\r\n  top: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(0, 0, 0, 0.3);\r\n  backdrop-filter: blur(10px);\r\n  display: none;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  overflow: scroll;\r\n}\r\n\r\n.popup-card {\r\n  background-color: rgb(255, 96, 96);\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  width: 90%;\r\n  padding: 5px;\r\n  border-radius: 10px;\r\n  padding-bottom: 50px;\r\n  margin: 30px 0;\r\n}\r\n\r\n.fa-times {\r\n  align-self: end;\r\n  margin: 0 5px 20px 0;\r\n  font-size: 24px;\r\n}\r\n\r\n.demo,\r\n.demo img {\r\n  width: 280px;\r\n  height: 420px;\r\n}\r\n\r\n.demo {\r\n  border: 6px solid white;\r\n  border-radius: 5px;\r\n}\r\n\r\n.mov-title {\r\n  text-align: center;\r\n  margin: 15px 0;\r\n  font-size: 28px;\r\n}\r\n\r\n.comment-item {\r\n  padding: 20px;\r\n}\r\n\r\n.form {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.input {\r\n  margin-bottom: 5px;\r\n  border-radius: 5px;\r\n  border: none;\r\n  text-indent: 5px;\r\n}\r\n\r\n.input1 {\r\n  margin-top: 5px;\r\n  height: 40px;\r\n}\r\n\r\n.input2 {\r\n  padding-top: 7px;\r\n}\r\n\r\n.submit-comment {\r\n  height: 35px;\r\n}\r\n\r\nfooter {\r\n  display: flex;\r\n  background-color: rosybrown;\r\n  height: 100px;\r\n  width: 90%;\r\n  margin: auto;\r\n  justify-content: space-evenly;\r\n  align-items: center;\r\n}\r\n\r\n.footer-text {\r\n  font-weight: 600;\r\n  width: 250px;\r\n}\r\n\r\n.for-fullscreen {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  width: 90%;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .list-items {\r\n    flex-flow: row wrap;\r\n    width: 95%;\r\n    margin: 40px auto;\r\n  }\r\n\r\n  .comments {\r\n    width: 100%;\r\n  }\r\n\r\n  .for-fullscreen {\r\n    flex-direction: row;\r\n    justify-content: space-around;\r\n    width: 90%;\r\n  }\r\n\r\n  .fa-bars {\r\n    display: none;\r\n  }\r\n\r\n  .nav-items {\r\n    display: flex;\r\n  }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -746,7 +747,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_likeApi_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _components_popup_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
-/* eslint-disable consistent-return */
 
 
 
@@ -781,15 +781,18 @@ itemContainer.addEventListener('click', (event) => {
       event.preventDefault();
       const username = document.querySelector('.input1');
       const comment = document.querySelector('.input2');
-      (0,_components_comments_js__WEBPACK_IMPORTED_MODULE_0__.postComment)(id, username, comment);
-      const tComments = document.querySelector('.comment-count-number');
-      const latestComment = +tComments.innerHTML + 1;
-      tComments.innerHTML = latestComment;
-      const data = new Date();
-      const dateComment = `${data.getFullYear()}-0${data.getMonth()}-0${data.getDate()}`;
-      commentContainer.innerHTML += `<li class="comment-item">${dateComment} ${username.value}: ${comment.value}</li>`;
-      username.value = '';
-      comment.value = '';
+      if (username.value !== '' && comment.value !== '') {
+        console.log(id);
+        (0,_components_comments_js__WEBPACK_IMPORTED_MODULE_0__.postComment)(id, username, comment);
+        const tComments = document.querySelector('.comment-count-number');
+        const latestComment = +tComments.innerHTML + 1;
+        tComments.innerHTML = latestComment;
+        const data = new Date();
+        const dateComment = `${data.getFullYear()}-0${data.getMonth()}-0${data.getDate()}`;
+        commentContainer.innerHTML += `<li class="comment-item">${dateComment} ${username.value}: ${comment.value}</li>`;
+        username.value = '';
+        comment.value = '';
+      }
     });
     document.body.style.overflow = 'hidden';
   }
