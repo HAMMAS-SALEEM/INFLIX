@@ -9,9 +9,9 @@
 
 [Click on the link to see the presentation](https://www.loom.com/share/b423886962bd42afb9f12c3e6f2986ea)
 
-## Live Demo
+## Get Live Demo
 
-[Live Demo]()
+[Live Demo Link](https://hammas-saleem.github.io/ToDoList/)
 
 ## Built With
 
@@ -19,11 +19,6 @@
 - CSS
 - JavaScript
 - Webpacks
-
-## Get Live Demo
-
-<!-- [Live Demo Link](https://hammas-saleem.github.io/ToDoList/) -->
-
 
 ## Clone and review it
 
